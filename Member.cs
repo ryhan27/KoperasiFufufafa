@@ -17,7 +17,6 @@ namespace BraveHeroCooperation.Models
         [Required, MaxLength(200)] public string FullName { get; set; } = "";
         public bool IsActive { get; set; } = true;
         public DateTime JoinDate { get; set; } = DateTime.UtcNow;
-
         public string MemberId { get; set; }
         public string IdCard { get; set; }
         public string Phone { get; set; }

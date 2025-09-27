@@ -5,7 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KoperasiFufufafa
+//Raka Er
+
+namespace KoperasiFufufafa.Models
 {
     public class DashConfig
     {

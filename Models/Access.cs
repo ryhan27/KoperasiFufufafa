@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KoperasiFufufafa
+namespace KoperasiFufufafa.Models
 {
     public class Access
     {

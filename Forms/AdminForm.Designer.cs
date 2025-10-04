@@ -36,7 +36,7 @@
             productToolStripMenuItem = new ToolStripMenuItem();
             approvalToolStripMenuItem = new ToolStripMenuItem();
             accesCooperationToolStripMenuItem = new ToolStripMenuItem();
-            panel1 = new Panel();
+            panelDisplay = new Panel();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -54,18 +54,21 @@
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new Size(37, 20);
             fileToolStripMenuItem.Text = "File";
+            fileToolStripMenuItem.Click += fileToolStripMenuItem_Click;
             // 
             // memberToolStripMenuItem
             // 
             memberToolStripMenuItem.Name = "memberToolStripMenuItem";
             memberToolStripMenuItem.Size = new Size(64, 20);
             memberToolStripMenuItem.Text = "Member";
+            memberToolStripMenuItem.Click += memberToolStripMenuItem_Click_1;
             // 
             // accesToolStripMenuItem
             // 
             accesToolStripMenuItem.Name = "accesToolStripMenuItem";
             accesToolStripMenuItem.Size = new Size(55, 20);
             accesToolStripMenuItem.Text = "Access";
+            accesToolStripMenuItem.Click += accesToolStripMenuItem_Click;
             // 
             // productToolStripMenuItem
             // 
@@ -78,30 +81,34 @@
             approvalToolStripMenuItem.Name = "approvalToolStripMenuItem";
             approvalToolStripMenuItem.Size = new Size(67, 20);
             approvalToolStripMenuItem.Text = "Approval";
+            approvalToolStripMenuItem.Click += approvalToolStripMenuItem_Click_1;
             // 
             // accesCooperationToolStripMenuItem
             // 
             accesCooperationToolStripMenuItem.Name = "accesCooperationToolStripMenuItem";
-            accesCooperationToolStripMenuItem.Size = new Size(119, 20);
-            accesCooperationToolStripMenuItem.Text = "Acces Cooperation";
+            accesCooperationToolStripMenuItem.Size = new Size(123, 20);
+            accesCooperationToolStripMenuItem.Text = "Across Cooperation";
+            accesCooperationToolStripMenuItem.Click += accesCooperationToolStripMenuItem_Click;
             // 
-            // panel1
+            // panelDisplay
             // 
-            panel1.Location = new Point(12, 27);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(776, 411);
-            panel1.TabIndex = 1;
+            panelDisplay.Location = new Point(12, 27);
+            panelDisplay.Name = "panelDisplay";
+            panelDisplay.Size = new Size(776, 411);
+            panelDisplay.TabIndex = 1;
+            panelDisplay.Paint += panelDisplay_Paint;
             // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(panel1);
+            Controls.Add(panelDisplay);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "AdminForm";
             Text = "AdminForm";
+            Load += AdminForm_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -118,6 +125,6 @@
         private ToolStripMenuItem productToolStripMenuItem;
         private ToolStripMenuItem approvalToolStripMenuItem;
         private ToolStripMenuItem accesCooperationToolStripMenuItem;
-        private Panel panel1;
+        private Panel panelDisplay;
     }
 }

@@ -99,6 +99,7 @@
             panelContent.Name = "panelContent";
             panelContent.Size = new Size(899, 479);
             panelContent.TabIndex = 1;
+            panelContent.Paint += panelContent_Paint;
             // 
             // Home_Form
             // 
@@ -110,6 +111,7 @@
             MainMenuStrip = menuStrip1;
             Name = "Home_Form";
             Text = "Home_Form";
+            Load += Home_Form_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

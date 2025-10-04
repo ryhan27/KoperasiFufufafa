@@ -1,5 +1,4 @@
-﻿using BraveHeroCooperation.Models;
-using KoperasiFufufafa.Models;
+﻿using KoperasiFufufafa.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +21,6 @@ namespace KoperasiFufufafa.Forms
             InitializeComponent();
             this.Text = this.Text + "- User:" + loggerMember.FullName + "(" + loggerMember.MemberId + ")";
             title = this.Text;
-
             route(new DashboardPage(member));
         }
 

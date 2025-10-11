@@ -115,7 +115,7 @@
             // linkForgotPassword
             // 
             linkForgotPassword.AutoSize = true;
-            linkForgotPassword.Location = new Point(463, 222);
+            linkForgotPassword.Location = new Point(456, 229);
             linkForgotPassword.Name = "linkForgotPassword";
             linkForgotPassword.Size = new Size(95, 15);
             linkForgotPassword.TabIndex = 8;

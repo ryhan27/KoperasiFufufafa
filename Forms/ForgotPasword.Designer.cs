@@ -47,8 +47,7 @@
             btnSubmit.Size = new Size(75, 23);
             btnSubmit.TabIndex = 0;
             btnSubmit.Text = "Submit";
-            btnSubmit.UseVisualStyleBackColor = true;
-            btnSubmit.Click += btnSubmit_Click;
+            btnSubmit.UseVisualStyleBackColor = true;            
             // 
             // btnBack
             // 

@@ -173,6 +173,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(125, 27);
             textBox3.TabIndex = 13;
+            textBox3.TextChanged += this.textBox3_TextChanged;
             // 
             // textBox4
             // 

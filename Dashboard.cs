@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace KoperasiFufufafa.Forms
 {
-    public partial class textExchangesRate : UserControl
+    public partial class Dashboard : Form
     {
-        public textExchangesRate()
+        public Dashboard()
         {
             InitializeComponent();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

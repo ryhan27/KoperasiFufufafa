@@ -1,6 +1,6 @@
 ﻿namespace KoperasiFufufafa.Forms
 {
-    partial class textExchangesRate
+    partial class ConfigPage
     {
         /// <summary> 
         /// Required designer variable.
@@ -31,7 +31,7 @@
             textTermin1 = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            textBox3 = new TextBox();
+            textExchangesRate = new TextBox();
             textInhouseFee = new TextBox();
             label3 = new Label();
             label4 = new Label();
@@ -51,7 +51,7 @@
             textTermin1.Name = "textTermin1";
             textTermin1.Size = new Size(266, 293);
             textTermin1.TabIndex = 0;
-            textTermin1.TextChanged += textBox1_TextChanged;
+//            textTermin1.TextChanged += textBox1_TextChanged;
             // 
             // label1
             // 
@@ -61,7 +61,7 @@
             label1.Size = new Size(130, 25);
             label1.TabIndex = 1;
             label1.Text = "Terminonlogi 1";
-            label1.Click += label1_Click;
+  //          label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -72,13 +72,13 @@
             label2.TabIndex = 2;
             label2.Text = "Exchanges Rate";
             // 
-            // textBox3
+            // textExchangesRate
             // 
-            textBox3.BackColor = Color.Silver;
-            textBox3.Location = new Point(69, 401);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(266, 31);
-            textBox3.TabIndex = 4;
+            textExchangesRate.BackColor = Color.Silver;
+            textExchangesRate.Location = new Point(69, 401);
+            textExchangesRate.Name = "textExchangesRate";
+            textExchangesRate.Size = new Size(266, 31);
+            textExchangesRate.TabIndex = 4;
             // 
             // textInhouseFee
             // 
@@ -160,8 +160,9 @@
             buttonUpdate.TabIndex = 13;
             buttonUpdate.Text = "Update";
             buttonUpdate.UseVisualStyleBackColor = false;
+           // buttonUpdate.Click += buttonUpdate_Click;
             // 
-            // textExchangesRate
+            // ConfigPage
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -174,12 +175,13 @@
             Controls.Add(label3);
             Controls.Add(label4);
             Controls.Add(textTermin2);
-            Controls.Add(textBox3);
+            Controls.Add(textExchangesRate);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(textTermin1);
-            Name = "textExchangesRate";
+            Name = "ConfigPage";
             Size = new Size(1078, 535);
+            Load += textExchangesRate_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -189,7 +191,7 @@
         private TextBox textTermin1;
         private Label label1;
         private Label label2;
-        private TextBox textBox3;
+        private TextBox textExchangesRate;
         private TextBox textInhouseFee;
         private Label label3;
         private Label label4;

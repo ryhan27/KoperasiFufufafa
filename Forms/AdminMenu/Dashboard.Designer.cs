@@ -1,6 +1,12 @@
-﻿namespace KoperasiFufufafa.Forms
+﻿csharp Forms\AdminMenu\Dashboard.Designer.cs
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace KoperasiFufufafa.Forms
 {
-    partial class Dashboard
+    partial class Dashboard : UserControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -20,7 +26,7 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+       
 
         /// <summary> 
         /// Required method for Designer support - do not modify 
@@ -74,7 +80,7 @@
             pictureBox1.Size = new Size(216, 109);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            //pictureBox1.Click += pictureBox1_Click;
             // 
             // pictureBox2
             // 

@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
+            labelMemberId = new Label();
+            labelCardId = new Label();
+            labelFullName = new Label();
+            labelJoinDate = new Label();
+            labelEmail = new Label();
+            labelPhone = new Label();
+            labelPhoneAlt = new Label();
+            labelAddress = new Label();
             label9 = new Label();
             comboBox1 = new ComboBox();
             MemberId = new Label();
@@ -46,87 +46,88 @@
             lblPhone = new Label();
             lblPhoneAlt = new Label();
             lblAddres = new Label();
-            dgvMember = new DataGridView();
+            dgvMemberx = new DataGridView();
             button1 = new Button();
             lblUpdate = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvMember).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMemberx).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // labelMemberId
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(32, 32);
-            label1.Name = "label1";
-            label1.Size = new Size(65, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Member Id";
-            label1.Click += label1_Click;
+            labelMemberId.AutoSize = true;
+            labelMemberId.Location = new Point(32, 32);
+            labelMemberId.Name = "labelMemberId";
+            labelMemberId.Size = new Size(65, 15);
+            labelMemberId.TabIndex = 0;
+            labelMemberId.Text = "Member Id";
+            labelMemberId.Click += label1_Click;
             // 
-            // label2
+            // labelCardId
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(32, 58);
-            label2.Name = "label2";
-            label2.Size = new Size(76, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Card Id (KTP)";
+            labelCardId.AutoSize = true;
+            labelCardId.Location = new Point(32, 58);
+            labelCardId.Name = "labelCardId";
+            labelCardId.Size = new Size(76, 15);
+            labelCardId.TabIndex = 1;
+            labelCardId.Text = "Card Id (KTP)";
             // 
-            // label3
+            // labelFullName
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(32, 89);
-            label3.Name = "label3";
-            label3.Size = new Size(61, 15);
-            label3.TabIndex = 2;
-            label3.Text = "Full Name";
+            labelFullName.AutoSize = true;
+            labelFullName.Location = new Point(32, 89);
+            labelFullName.Name = "labelFullName";
+            labelFullName.Size = new Size(61, 15);
+            labelFullName.TabIndex = 2;
+            labelFullName.Text = "Full Name";
             // 
-            // label4
+            // labelJoinDate
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(32, 115);
-            label4.Name = "label4";
-            label4.Size = new Size(55, 15);
-            label4.TabIndex = 3;
-            label4.Text = "Join Date";
-            label4.Click += label4_Click;
+            labelJoinDate.AutoSize = true;
+            labelJoinDate.Location = new Point(32, 115);
+            labelJoinDate.Name = "labelJoinDate";
+            labelJoinDate.Size = new Size(55, 15);
+            labelJoinDate.TabIndex = 3;
+            labelJoinDate.Text = "Join Date";
+            labelJoinDate.Click += label4_Click;
             // 
-            // label5
+            // labelEmail
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(32, 142);
-            label5.Name = "label5";
-            label5.Size = new Size(36, 15);
-            label5.TabIndex = 4;
-            label5.Text = "Email";
-            label5.Click += label5_Click;
+            labelEmail.AutoSize = true;
+            labelEmail.Location = new Point(32, 142);
+            labelEmail.Name = "labelEmail";
+            labelEmail.Size = new Size(36, 15);
+            labelEmail.TabIndex = 4;
+            labelEmail.Text = "Email";
+            labelEmail.Click += label5_Click;
             // 
-            // label6
+            // labelPhone
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(32, 169);
-            label6.Name = "label6";
-            label6.Size = new Size(41, 15);
-            label6.TabIndex = 5;
-            label6.Text = "Phone";
-            label6.Click += label6_Click;
+            labelPhone.AutoSize = true;
+            labelPhone.Location = new Point(32, 169);
+            labelPhone.Name = "labelPhone";
+            labelPhone.Size = new Size(41, 15);
+            labelPhone.TabIndex = 5;
+            labelPhone.Text = "Phone";
+            labelPhone.Click += label6_Click;
             // 
-            // label7
+            // labelPhoneAlt
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(32, 193);
-            label7.Name = "label7";
-            label7.Size = new Size(59, 15);
-            label7.TabIndex = 6;
-            label7.Text = "Phone Alt";
+            labelPhoneAlt.AutoSize = true;
+            labelPhoneAlt.Location = new Point(32, 193);
+            labelPhoneAlt.Name = "labelPhoneAlt";
+            labelPhoneAlt.Size = new Size(59, 15);
+            labelPhoneAlt.TabIndex = 6;
+            labelPhoneAlt.Text = "Phone Alt";
             // 
-            // label8
+            // labelAddress
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(32, 220);
-            label8.Name = "label8";
-            label8.Size = new Size(44, 15);
-            label8.TabIndex = 7;
-            label8.Text = "Addres";
+            labelAddress.AutoSize = true;
+            labelAddress.Location = new Point(32, 220);
+            labelAddress.Name = "labelAddress";
+            labelAddress.Size = new Size(44, 15);
+            labelAddress.TabIndex = 7;
+            labelAddress.Text = "Addres";
+            labelAddress.Click += label8_Click;
             // 
             // label9
             // 
@@ -226,13 +227,14 @@
             lblAddres.Text = "...";
             lblAddres.Click += label17_Click;
             // 
-            // dgvMember
+            // dgvMemberx
             // 
-            dgvMember.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMember.Location = new Point(346, 20);
-            dgvMember.Name = "dgvMember";
-            dgvMember.Size = new Size(443, 335);
-            dgvMember.TabIndex = 18;
+            dgvMemberx.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMemberx.Location = new Point(346, 20);
+            dgvMemberx.Name = "dgvMemberx";
+            dgvMemberx.Size = new Size(443, 335);
+            dgvMemberx.TabIndex = 18;
+            dgvMemberx.CellContentClick += dgvMember_CellContentClick;
             // 
             // button1
             // 
@@ -260,7 +262,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(lblUpdate);
             Controls.Add(button1);
-            Controls.Add(dgvMember);
+            Controls.Add(dgvMemberx);
             Controls.Add(lblAddres);
             Controls.Add(lblPhoneAlt);
             Controls.Add(lblPhone);
@@ -271,32 +273,32 @@
             Controls.Add(MemberId);
             Controls.Add(comboBox1);
             Controls.Add(label9);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(labelAddress);
+            Controls.Add(labelPhoneAlt);
+            Controls.Add(labelPhone);
+            Controls.Add(labelEmail);
+            Controls.Add(labelJoinDate);
+            Controls.Add(labelFullName);
+            Controls.Add(labelCardId);
+            Controls.Add(labelMemberId);
             Name = "MemberPage";
             Size = new Size(882, 445);
             Load += MemberPage_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvMember).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMemberx).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private Label label8;
+        private Label labelMemberId;
+        private Label labelCardId;
+        private Label labelFullName;
+        private Label labelJoinDate;
+        private Label labelEmail;
+        private Label labelPhone;
+        private Label labelPhoneAlt;
+        private Label labelAddress;
         private Label label9;
         private ComboBox comboBox1;
         private Label MemberId;
@@ -307,7 +309,7 @@
         private Label lblPhone;
         private Label lblPhoneAlt;
         private Label lblAddres;
-        private DataGridView dgvMember;
+        private DataGridView dgvMemberx;
         private Button button1;
         private Label lblUpdate;
     }

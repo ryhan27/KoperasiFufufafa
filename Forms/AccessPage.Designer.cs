@@ -32,12 +32,18 @@
             btnSubmit = new Button();
             cbMember = new ComboBox();
             groupBox1 = new GroupBox();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
+            label13 = new Label();
+            label12 = new Label();
+            label11 = new Label();
+            label10 = new Label();
+            label9 = new Label();
+            label8 = new Label();
             label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
             listBox1 = new ListBox();
             cbGrandAll = new CheckBox();
             cbSaving = new CheckBox();
@@ -45,12 +51,6 @@
             cbTransferAccross = new CheckBox();
             cbExchange = new CheckBox();
             cbLoan = new CheckBox();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
             dgvAccess = new DataGridView();
             label14 = new Label();
             groupBox1.SuspendLayout();
@@ -105,50 +105,59 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Details";
             // 
-            // label2
+            // label13
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(14, 36);
-            label2.Name = "label2";
-            label2.Size = new Size(61, 15);
-            label2.TabIndex = 0;
-            label2.Text = "Full Name";
+            label13.AutoSize = true;
+            label13.Location = new Point(114, 175);
+            label13.Name = "label13";
+            label13.Size = new Size(17, 15);
+            label13.TabIndex = 18;
+            label13.Text = "--";
             // 
-            // label3
+            // label12
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(14, 63);
-            label3.Name = "label3";
-            label3.Size = new Size(55, 15);
-            label3.TabIndex = 1;
-            label3.Text = "Join Date";
+            label12.AutoSize = true;
+            label12.Location = new Point(115, 149);
+            label12.Name = "label12";
+            label12.Size = new Size(17, 15);
+            label12.TabIndex = 17;
+            label12.Text = "--";
             // 
-            // label4
+            // label11
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(14, 91);
-            label4.Name = "label4";
-            label4.Size = new Size(36, 15);
-            label4.TabIndex = 2;
-            label4.Text = "Email";
+            label11.AutoSize = true;
+            label11.Location = new Point(115, 124);
+            label11.Name = "label11";
+            label11.Size = new Size(17, 15);
+            label11.TabIndex = 16;
+            label11.Text = "--";
             // 
-            // label5
+            // label10
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(14, 124);
-            label5.Name = "label5";
-            label5.Size = new Size(41, 15);
-            label5.TabIndex = 3;
-            label5.Text = "Phone";
+            label10.AutoSize = true;
+            label10.Location = new Point(115, 91);
+            label10.Name = "label10";
+            label10.Size = new Size(17, 15);
+            label10.TabIndex = 15;
+            label10.Text = "--";
             // 
-            // label6
+            // label9
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(14, 149);
-            label6.Name = "label6";
-            label6.Size = new Size(59, 15);
-            label6.TabIndex = 6;
-            label6.Text = "Phone Alt";
+            label9.AutoSize = true;
+            label9.Location = new Point(115, 63);
+            label9.Name = "label9";
+            label9.Size = new Size(17, 15);
+            label9.TabIndex = 14;
+            label9.Text = "--";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(115, 36);
+            label8.Name = "label8";
+            label8.Size = new Size(17, 15);
+            label8.TabIndex = 13;
+            label8.Text = "--";
             // 
             // label7
             // 
@@ -159,13 +168,58 @@
             label7.TabIndex = 7;
             label7.Text = "Address";
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(14, 149);
+            label6.Name = "label6";
+            label6.Size = new Size(59, 15);
+            label6.TabIndex = 6;
+            label6.Text = "Phone Alt";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(14, 124);
+            label5.Name = "label5";
+            label5.Size = new Size(41, 15);
+            label5.TabIndex = 3;
+            label5.Text = "Phone";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(14, 91);
+            label4.Name = "label4";
+            label4.Size = new Size(36, 15);
+            label4.TabIndex = 2;
+            label4.Text = "Email";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(14, 63);
+            label3.Name = "label3";
+            label3.Size = new Size(55, 15);
+            label3.TabIndex = 1;
+            label3.Text = "Join Date";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(14, 36);
+            label2.Name = "label2";
+            label2.Size = new Size(61, 15);
+            label2.TabIndex = 0;
+            label2.Text = "Full Name";
+            // 
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(38, 108);
+            listBox1.Location = new Point(38, 93);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(201, 169);
+            listBox1.Size = new Size(201, 184);
             listBox1.TabIndex = 6;
             // 
             // cbGrandAll
@@ -196,7 +250,7 @@
             cbTransferInhouse.BackColor = SystemColors.ButtonHighlight;
             cbTransferInhouse.Location = new Point(50, 200);
             cbTransferInhouse.Name = "cbTransferInhouse";
-            cbTransferInhouse.Size = new Size(120, 19);
+            cbTransferInhouse.Size = new Size(121, 19);
             cbTransferInhouse.TabIndex = 9;
             cbTransferInhouse.Text = "Transfer - Inhouse";
             cbTransferInhouse.UseVisualStyleBackColor = false;
@@ -207,7 +261,7 @@
             cbTransferAccross.BackColor = SystemColors.ButtonHighlight;
             cbTransferAccross.Location = new Point(50, 225);
             cbTransferAccross.Name = "cbTransferAccross";
-            cbTransferAccross.Size = new Size(119, 19);
+            cbTransferAccross.Size = new Size(120, 19);
             cbTransferAccross.TabIndex = 10;
             cbTransferAccross.Text = "Transfer - Accross";
             cbTransferAccross.UseVisualStyleBackColor = false;
@@ -219,7 +273,7 @@
             cbExchange.BackColor = SystemColors.ButtonHighlight;
             cbExchange.Location = new Point(50, 250);
             cbExchange.Name = "cbExchange";
-            cbExchange.Size = new Size(77, 19);
+            cbExchange.Size = new Size(76, 19);
             cbExchange.TabIndex = 11;
             cbExchange.Text = "Exchange";
             cbExchange.UseVisualStyleBackColor = false;
@@ -234,60 +288,6 @@
             cbLoan.TabIndex = 12;
             cbLoan.Text = "Loan";
             cbLoan.UseVisualStyleBackColor = false;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(115, 36);
-            label8.Name = "label8";
-            label8.Size = new Size(17, 15);
-            label8.TabIndex = 13;
-            label8.Text = "--";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(115, 63);
-            label9.Name = "label9";
-            label9.Size = new Size(17, 15);
-            label9.TabIndex = 14;
-            label9.Text = "--";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(115, 91);
-            label10.Name = "label10";
-            label10.Size = new Size(17, 15);
-            label10.TabIndex = 15;
-            label10.Text = "--";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(115, 124);
-            label11.Name = "label11";
-            label11.Size = new Size(17, 15);
-            label11.TabIndex = 16;
-            label11.Text = "--";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(115, 149);
-            label12.Name = "label12";
-            label12.Size = new Size(17, 15);
-            label12.TabIndex = 17;
-            label12.Text = "--";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(114, 175);
-            label13.Name = "label13";
-            label13.Size = new Size(17, 15);
-            label13.TabIndex = 18;
-            label13.Text = "--";
             // 
             // dgvAccess
             // 

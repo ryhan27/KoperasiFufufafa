@@ -81,7 +81,7 @@
             lblLoan.Size = new Size(47, 15);
             lblLoan.TabIndex = 0;
             lblLoan.Text = "Loan ID";
-            lblLoan.Click += label1_Click;
+            //lblLoan.Click += label1_Click;
             // 
             // lblType
             // 
@@ -172,7 +172,7 @@
             label11.Size = new Size(76, 15);
             label11.TabIndex = 10;
             label11.Text = "Max Amount";
-            label11.Click += label11_Click;
+            //label11.Click += label11_Click;
             // 
             // label12
             // 
@@ -276,7 +276,7 @@
             btnBrowseKK.TabIndex = 25;
             btnBrowseKK.Text = "Browse";
             btnBrowseKK.UseVisualStyleBackColor = true;
-            btnBrowseKK.Click += button1_Click;
+            //btnBrowseKK.Click += button1_Click;
             // 
             // btnShowKK
             // 
@@ -295,7 +295,7 @@
             btnNew.TabIndex = 27;
             btnNew.Text = "New Loan";
             btnNew.UseVisualStyleBackColor = true;
-            btnNew.Click += button3_Click;
+            //btnNew.Click += button3_Click;
             // 
             // btnApply
             // 
@@ -314,7 +314,7 @@
             btnShowGaji.TabIndex = 29;
             btnShowGaji.Text = "Show";
             btnShowGaji.UseVisualStyleBackColor = true;
-            btnShowGaji.Click += button5_Click;
+            //btnShowGaji.Click += button5_Click;
             // 
             // btnBrowseGaji
             // 
@@ -390,9 +390,9 @@
             labelID.AutoSize = true;
             labelID.Location = new Point(242, 24);
             labelID.Name = "labelID";
-            labelID.Size = new Size(10, 15);
+            labelID.Size = new Size(19, 15);
             labelID.TabIndex = 38;
-            labelID.Text = " ";
+            labelID.Text = " ...";
             // 
             // LoanPage
             // 
@@ -437,7 +437,7 @@
             Controls.Add(lblType);
             Controls.Add(lblLoan);
             Name = "LoanPage";
-            Size = new Size(1444, 660);
+            Size = new Size(1444, 671);
             Load += LoanPage_Load;
             ((System.ComponentModel.ISupportInitialize)dgvLoan).EndInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();

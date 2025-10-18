@@ -118,5 +118,10 @@ namespace BankDashboard
             label.ForeColor = Color.Black;
             return label;
         }
+
+        private void InitializeComponent()
+        {
+
+        }
     }
 }

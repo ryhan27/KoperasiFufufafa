@@ -51,7 +51,7 @@ namespace KoperasiFufufafa.Forms
             textLoanId.BackColor = Color.Silver;
             textLoanId.Location = new Point(495, 47);
             textLoanId.Name = "textLoanId";
-            textLoanId.Size = new Size(309, 31);
+            textLoanId.Size = new Size(309, 27);
             textLoanId.TabIndex = 1;
             // 
             // label1
@@ -59,7 +59,7 @@ namespace KoperasiFufufafa.Forms
             label1.AutoSize = true;
             label1.Location = new Point(495, 12);
             label1.Name = "label1";
-            label1.Size = new Size(73, 25);
+            label1.Size = new Size(60, 20);
             label1.TabIndex = 2;
             label1.Text = "Loan ID";
             // 
@@ -79,7 +79,7 @@ namespace KoperasiFufufafa.Forms
             label2.AutoSize = true;
             label2.Location = new Point(495, 97);
             label2.Name = "label2";
-            label2.Size = new Size(77, 25);
+            label2.Size = new Size(62, 20);
             label2.TabIndex = 5;
             label2.Text = "Amount";
             // 
@@ -88,7 +88,7 @@ namespace KoperasiFufufafa.Forms
             textAmount.BackColor = Color.Silver;
             textAmount.Location = new Point(495, 132);
             textAmount.Name = "textAmount";
-            textAmount.Size = new Size(309, 31);
+            textAmount.Size = new Size(309, 27);
             textAmount.TabIndex = 4;
             // 
             // label3
@@ -96,7 +96,7 @@ namespace KoperasiFufufafa.Forms
             label3.AutoSize = true;
             label3.Location = new Point(495, 186);
             label3.Name = "label3";
-            label3.Size = new Size(60, 25);
+            label3.Size = new Size(51, 20);
             label3.TabIndex = 7;
             label3.Text = "Recipt";
             // 
@@ -105,7 +105,7 @@ namespace KoperasiFufufafa.Forms
             textRecipt.BackColor = Color.Silver;
             textRecipt.Location = new Point(495, 221);
             textRecipt.Name = "textRecipt";
-            textRecipt.Size = new Size(309, 31);
+            textRecipt.Size = new Size(309, 27);
             textRecipt.TabIndex = 6;
             // 
             // btnSubmit
@@ -142,6 +142,7 @@ namespace KoperasiFufufafa.Forms
             Controls.Add(textLoanId);
             Controls.Add(dataGridViewInstallment);
             Name = "InstallmentForm";
+            Load += InstallmentForm_Load_1;
             ((ISupportInitialize)dataGridViewInstallment).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -149,6 +150,11 @@ namespace KoperasiFufufafa.Forms
         }
 
         private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InstallmentForm_Load_1(object sender, EventArgs e)
         {
 
         }

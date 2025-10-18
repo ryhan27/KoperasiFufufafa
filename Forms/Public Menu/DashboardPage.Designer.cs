@@ -1,4 +1,8 @@
-﻿namespace KoperasiFufufafa.Forms
+﻿using KoperasiFufufafa.Models;
+using System.Windows.Forms;
+using System.Xml.Linq;
+
+namespace KoperasiFufufafa.Forms
 {
     partial class DashboardPage
     {
@@ -53,7 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            SuspendLayout();
+            //SuspendLayout();
             // 
             // pictureBox1
             // 
@@ -128,7 +132,7 @@
             pictureBox3.Size = new Size(183, 110);
             pictureBox3.TabIndex = 7;
             pictureBox3.TabStop = false;
-            pictureBox3.Click += pictureBox3_Click;
+            //pictureBox3.Click += pictureBox3_Click;
             // 
             // label7
             // 

@@ -13,6 +13,6 @@ namespace KoperasiFufufafa.Models
         public Loan Loan { get; set; } = null!;
         public decimal Amount { get; set; }
         public DateTime PaymentDate { get; set; } = DateTime.UtcNow;
-        public string? proofPath { get; set; }
+        public string? ProofPath { get; set; }
     }
 }

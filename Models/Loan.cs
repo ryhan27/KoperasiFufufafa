@@ -12,7 +12,7 @@ namespace KoperasiFufufafa.Models
         public int Id { get; set; }
         [Required]public int MemberId { get; set; }
         public Member Member { get; set; } = null!;
-        [Required]public int LoandId { get; set; }
+        [Required]public int LoanId { get; set; }
         [Required]public decimal Amount { get; set; }
         public decimal Outstanding {  get; set; }
         public decimal Fine { get; set; }

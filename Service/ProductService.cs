@@ -123,6 +123,7 @@ namespace KoperasiFufufafa.Service
             // Gabungkan data asli
             result.AddRange(data);
 
+
             return result;
         }
     }

@@ -16,5 +16,12 @@ namespace KoperasiFufufafa.Forms
         {
             InitializeComponent();
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+                 public decimal Amount { get; set; }
+        public DateTime PaymentDate { get; set; } = DateTime.UtcNow;
+        public string? ProofPath { get; set; }
+    }
     }
 }

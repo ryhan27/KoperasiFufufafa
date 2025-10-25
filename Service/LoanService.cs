@@ -2,12 +2,15 @@
 using KoperasiFufufafa.Models;
 using KoperasiFufufafa.Models;
 using Microsoft.EntityFrameworkCore;
+//public decimal Amount { get; set; }
+//public DateTime PaymentDate { get; set; } = DateTime.UtcNow;
+//public string? ProofPath { get; set; }
 
 namespace KoperasiFufufafa.Services
 {
     public class LoanService
     {
-        AppDbContext _db;
+        AppDbContext _db; 
         public LoanService(AppDbContext db)
         {
             _db = db;
@@ -50,7 +53,7 @@ namespace KoperasiFufufafa.Services
                 kkPath = kk,
                 KtpPath = ktp,
                 SlipGajiPath = slip,
-                LoanId = int.Parse(loanId),
+                LoandId = int.Parse(loanId),
                 Tenor = tenorLeft,
                 TenorLeft = tenorLeft,
                 MemberId = member.Id,
@@ -116,7 +119,7 @@ namespace KoperasiFufufafa.Services
                 LoanId = loanId,
                 Amount = decimal.Parse(amount),
                 PaymentDate = DateTime.UtcNow,
-                ProofPath = path
+                proofPath = path
             };
             _db.Installments.Add(i);
             await _db.SaveChangesAsync();

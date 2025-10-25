@@ -1,5 +1,6 @@
 ﻿using KoperasiFufufafa.Data;
 using KoperasiFufufafa.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -97,12 +98,12 @@ namespace KoperasiFufufafa.Service
         }
         public async Task<LoanMaster?> FindLoanById(int id)
         {
-            return await _db.LoanMasters.FirstOrDefaultAsync(lm => lm.Id == id);
+            return await _db.LoanMasters.FirstOrDefaultAsync(lm => lm.id == id);
         }
 
         public async Task<SavingMaster?> FindSavingById(int id)
         {
-            return await _db.SavingMasters.FirstOrDefaultAsync(sm => sm.Id == id);
+            return await _db.SavingMasters.FirstOrDefaultAsync(sm => sm.id == id);
         }
 
         public object SetDropDownLoan()

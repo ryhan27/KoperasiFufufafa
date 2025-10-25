@@ -88,6 +88,7 @@ namespace KoperasiFufufafa.Services
                 .ToList();
         }*/
 
+        public async Task<Loan?> findById(int id)
         public async Task<List<Loan>> LoadsApproval()
         {
             return await _db.Loans

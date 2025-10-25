@@ -37,7 +37,7 @@
             pnlHeader.Dock = DockStyle.Top;
             pnlHeader.Location = new Point(0, 0);
             pnlHeader.Name = "pnlHeader";
-            pnlHeader.Size = new Size(800, 84);
+            pnlHeader.Size = new Size(1180, 84);
             pnlHeader.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -51,14 +51,15 @@
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(800, 366);
+            tableLayoutPanel1.Size = new Size(1180, 439);
             tableLayoutPanel1.TabIndex = 3;
+            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1180, 523);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(pnlHeader);
             Name = "Dashboard";

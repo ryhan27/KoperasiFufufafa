@@ -2,7 +2,9 @@
 using KoperasiFufufafa.Models;
 using KoperasiFufufafa.Models;
 using Microsoft.EntityFrameworkCore;
-
+public decimal Amount { get; set; }
+public DateTime PaymentDate { get; set; } = DateTime.UtcNow;
+public string? ProofPath { get; set; }
 namespace KoperasiFufufafa.Services
 {
     public class LoanService

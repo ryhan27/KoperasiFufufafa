@@ -11,7 +11,7 @@ namespace KoperasiFufufafa.Service
    public class MemberServices
     {
         private readonly AppDbContext _db;
-        public MemberService(AppDbContext db) => _db = db;
+        public MemberServices(AppDbContext db) => _db = db;
         public List<object> SetDropdown()
         {
             var list = _db.Members

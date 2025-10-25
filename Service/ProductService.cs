@@ -1,4 +1,5 @@
-﻿using KoperasiFufufafa.Models;
+﻿using KoperasiFufufafa.Data;
+using KoperasiFufufafa.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

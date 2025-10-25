@@ -7,7 +7,7 @@ namespace KoperasiFufufafa.Services
 {
     public class LoanService
     {
-        AppDbContext _db;
+        AppDbContext _db; 
         public LoanService(AppDbContext db)
         {
             _db = db;

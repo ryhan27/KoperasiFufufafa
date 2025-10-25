@@ -53,7 +53,7 @@ namespace KoperasiFufufafa.Services
                 kkPath = kk,
                 KtpPath = ktp,
                 SlipGajiPath = slip,
-                LoandId = int.Parse(loanId),
+                //Id = int.Parse(loanId),
                 Tenor = tenorLeft,
                 TenorLeft = tenorLeft,
                 MemberId = member.Id,
@@ -120,7 +120,7 @@ namespace KoperasiFufufafa.Services
                 LoanId = loanId,
                 Amount = decimal.Parse(amount),
                 PaymentDate = DateTime.UtcNow,
-                proofPath = path
+                ProofPath = path
             };
             _db.Installments.Add(i);
             await _db.SaveChangesAsync();

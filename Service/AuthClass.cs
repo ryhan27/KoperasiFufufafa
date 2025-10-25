@@ -1,5 +1,6 @@
 ﻿using KoperasiFufufafa.Data;
 using KoperasiFufufafa.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace KoperasiFufufafa.Service
         public async Task<Member?> LoginAsync(string username, string password)
         {
             var user = await _db.Members.FirstOrDefaultAsync(x => x.Username == username && x.IsActive);
-            if (user != null && BCrypt.Net.BCrypt.Verify(password, user.Passwordhash))
+            if (user != null && BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
                 return user;
             return null;
         }
@@ -63,12 +64,12 @@ namespace KoperasiFufufafa.Service
 
         public async Task<string> ResetPasswordAsync(string username, string quest1, string quest2)
         {
-            var user = await _db.Members.FirstorDefaultAsync(x => x.Username == username && x.IsActive && x.quest1 == quest1.Trim() && x.quest2 == quest2.Trim());
+            var user = await _db.Members.FirstOrDefaultAsync(x => x.Username == username && x.IsActive && x.quest1 == quest1.Trim() && x.quest2 == quest2.Trim());
             if (user != null)
             {
-                string password = RandomNumberGenerator.GetString(6, false);
+                string password = RandomNumberGenerator.GetHexString(6, false);
                 var hash = BCrypt.Net.BCrypt.HashPassword(password);
-                user.Passwordhash = hash;
+                user.PasswordHash = hash;
                 _db.Members.Update(user);
                 await _db.SaveChangesAsync();
                 return password;

@@ -16,9 +16,6 @@ namespace KoperasiFufufafa.Models
         [MaxLength(4000)]public string Terminologi1 { get; set; }
         [MaxLength(4000)]public string Terminologi2 { get; set; }
         [MaxLength(4000)]public string Terminologi3 { get; set; }
-        public decimal ExchangeRate { get; set; }
-        public decimal TransferAcrossFee { get; set; }
-        public decimal TransferInHouseFee { get; set; }
 
     }
 }

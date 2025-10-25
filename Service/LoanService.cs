@@ -47,7 +47,7 @@ namespace KoperasiFufufafa.Services
                 DueDate = int.Parse(dueDate),
                 Interest = decInterest,
                 InterestFine = decimal.Parse(interestFine),
-                KkPath = kk,
+                kkPath = kk,
                 KtpPath = ktp,
                 SlipGajiPath = slip,
                 LoanId = int.Parse(loanId),

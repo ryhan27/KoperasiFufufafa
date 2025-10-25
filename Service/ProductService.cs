@@ -41,7 +41,7 @@ namespace KoperasiFufufafa.Service
             {
                 isNew = false;
                 idLoanMaster = int.Parse(id);
-                lm = _db.LoanMasters.FirstOrDefault(l => l.Id == idLoanMaster);
+                lm = _db.LoanMasters.FirstOrDefault(l => l.id == idLoanMaster);
             }
 
             lm.UpdateOn = DateTime.UtcNow;

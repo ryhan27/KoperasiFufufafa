@@ -24,7 +24,7 @@ namespace KoperasiFufufafa.Service
             return config;
         }
 
-        public async Task addOrUpdate(string terminologi1, string terminologi2, string exchangeRate, decimal TransferInhouseFee, decimal TransferAcrossFee)
+        public async Task addOrUpdate(string terminologi1, string terminologi2,string terminologi3, string exchangeRate, decimal TransferInhouseFee, decimal TransferAcrossFee)
         {
             Boolean isNew = false;
             var config = await _db.Configurations.FirstOrDefaultAsync(x => x.Id == 1);
@@ -34,6 +34,7 @@ namespace KoperasiFufufafa.Service
                 config = new Configuration();
                 config.terminologi1 = terminologi1;
                 config.terminologi2 = terminologi2;
+                config.terminologi2 = terminologi3;
                 config.exchangeRate = decimal.Parse(exchangeRate);
                 config.transferInhouseFee = TransferInhouseFee;
                 config.transferAcrossFee = TransferAcrossFee;

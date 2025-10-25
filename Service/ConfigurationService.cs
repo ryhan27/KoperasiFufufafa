@@ -9,7 +9,7 @@ using KoperasiFufufafa.Models;
 
 namespace KoperasiFufufafa.Service
 {
-    internal class ConfigurationService
+    public class ConfigurationService
     {
         private readonly AppDbContext _db;
 
@@ -20,35 +20,32 @@ namespace KoperasiFufufafa.Service
 
         public async Task<Configuration?> GetConfig()
         {
-            return await _db.Configurations.FirstOrDefaultAsync(c => c.Id == 1);
+            var config = await _db.Configurations.FirstOrDefaultAsync(x => x.Id == 1);
+            return config;
         }
 
-        public async Task addOrUpdate(string terminolog1, string terminolog2, string terminolog3, string exchangeRate, string inhouseFee, string accrossFee)
+        public async Task addOrUpdate(string terminologi1, string terminologi2, string exchangeRate, decimal TransferInhouseFee, decimal TransferAcrossFee)
         {
-            var config = await _db.Configurations.FirstOrDefaultAsync(c => c.Id == 1);
-
+            Boolean isNew = false;
+            var config = await _db.Configurations.FirstOrDefaultAsync(x => x.Id == 1);
             if (config == null)
             {
-                config = new Configuration
-                {
-                    terminologi1 = terminolog1,
-                    Terminolog2 = terminolog2,
-                    Terminolog3 = terminolog3,
-                    ExchangeRate = exchangeRate,
-                    InhouseFee = inhouseFee,
-                    AccrossFee = accrossFee
-                };
+                isNew = true;
+                config = new Configuration();
+                config.terminologi1 = terminologi1;
+                config.terminologi2 = terminologi2;
+                config.exchangeRate = decimal.Parse(exchangeRate);
+                config.transferInhouseFee = TransferInhouseFee;
+                config.transferAcrossFee = TransferAcrossFee;
+            }
 
-                _db.Configurations.Add(config);
+            if (isNew)
+            {
+                _db.Add(config);
             }
             else
             {
-                config.Terminolog1 = terminolog1;
-                config.Terminolog2 = terminolog2;
-                config.Terminolog3 = terminolog3;
-                config.ExchangeRate = exchangeRate;
-                config.InhouseFee = inhouseFee;
-                config.AccrossFee = accrossFee;
+                _db.Update(config);
             }
 
             await _db.SaveChangesAsync();

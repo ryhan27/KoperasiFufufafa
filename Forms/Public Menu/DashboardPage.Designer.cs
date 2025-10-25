@@ -57,7 +57,7 @@ namespace KoperasiFufufafa.Forms
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            //SuspendLayout();
+            SuspendLayout();
             // 
             // pictureBox1
             // 
@@ -243,14 +243,14 @@ namespace KoperasiFufufafa.Forms
             // 
             // DashboardPage
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-//            Controls.Add(lblSaving);
-  //          Controls.Add(label5);
-    //        Controls.Add(lblExchange);
-      //      Controls.Add(label12);
-        //    Controls.Add(pictureBox6);
-          //  Controls.Add(label9);
+            //AutoScaleDimensions = new SizeF(8F, 20F);
+            //AutoScaleMode = AutoScaleMode.Font;
+            //            Controls.Add(lblSaving);
+            //          Controls.Add(label5);
+            //        Controls.Add(lblExchange);
+            //      Controls.Add(label12);
+            //    Controls.Add(pictureBox6);
+            //  Controls.Add(label9);
             //Controls.Add(lblAcross);
             //Controls.Add(pictureBox5);
             //Controls.Add(label7);

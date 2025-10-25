@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace KoperasiFufufafa.Models
 {
-    class Configuration
+    public class Configuration
     {
         public int Id { get; set; }
 

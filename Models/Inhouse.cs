@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace KoperasiFufufafa.Models
 {
-    class Inhouse
+    public class Inhouse
     {
         public int Id { get; set; }
 

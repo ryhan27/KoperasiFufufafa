@@ -31,7 +31,7 @@ namespace KoperasiFufufafa.Service
             {
                 config = new Configuration
                 {
-                    Terminolog1 = terminolog1,
+                    terminologi1 = terminolog1,
                     Terminolog2 = terminolog2,
                     Terminolog3 = terminolog3,
                     ExchangeRate = exchangeRate,

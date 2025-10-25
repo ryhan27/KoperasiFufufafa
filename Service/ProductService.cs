@@ -77,7 +77,7 @@ namespace KoperasiFufufafa.Service
             {
                 isNew = false;
                 idSavingMaster = int.Parse(id);
-                sm = _db.SavingMasters.FirstOrDefault(s => s.Id == idSavingMaster);
+                sm = _db.SavingMasters.FirstOrDefault(s => s.id == idSavingMaster);
             }
 
             sm.UpdateOn = DateTime.UtcNow;
@@ -111,7 +111,7 @@ namespace KoperasiFufufafa.Service
                 .OrderBy(x => x.Name)
                 .Select(x => new
                 {
-                    x.Id,
+                    x.id,
                     DisplayName = x.Name + ", t:" + x.Tenor + " (" + x.Interest + ")"
                 })
                 .ToList();

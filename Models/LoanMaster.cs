@@ -16,7 +16,7 @@ namespace KoperasiFufufafa.Models
         public decimal Fine { get; set; }
         public decimal MinAmount { get; set; } = 0;
         public decimal MaxAmount { get; set; } = 0;
-        public decimal AdminFree { get; set; } = 0;
+        public decimal AdminFee { get; set; } = 0;
         public DateTime UpdateOn { get; set; }
 
 

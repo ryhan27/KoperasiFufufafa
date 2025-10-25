@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KoperasiFufufafa.Models
 {
-    internal class Installment
+    public class Installment
     {
         public int Id { get; set; }
         public int LoanId { get; set; }

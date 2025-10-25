@@ -29,7 +29,7 @@ namespace KoperasiFufufafa.Data
             optionsBuilder.UseNpgsql(config.GetConnectionString("Default"));
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder) 
         {
             modelBuilder.Entity<Loan>()
                 .HasOne(l => l.Member)

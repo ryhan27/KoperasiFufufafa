@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Api\Models\" />
+    <Folder Include="Api\Connectors\" />
     <Folder Include="Utils\" />
   </ItemGroup>
 

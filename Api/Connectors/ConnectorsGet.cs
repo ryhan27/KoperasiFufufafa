@@ -10,7 +10,7 @@ namespace KoperasiFufufafa.Api.Connectors
     class ConnectorsGet
     {
         private readonly HttpClient _httpClient = new HttpClient();
-        private string _baseUrl = "http://localhost:20254/";
+        private String _baseUrl = "http://localhost:20254/";
 
         public async Task<CoopApiResponse?> GetCoopAsync()
         {
@@ -19,12 +19,161 @@ namespace KoperasiFufufafa.Api.Connectors
 
             var json = await response.Content.ReadAsStringAsync();
 
-            return JsonSerializer.Deserialize<CoopApiResponse>(json);
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            return JsonSerializer.Deserialize<CoopApiResponse>(json, options);
         }
-    public async Task<MemberApiResponse> MemberGetAsync(string memberId)
+
+        public async Task<MemberApiResponse?> GetAllMembersAsync()
         {
-            var response = await _httpClient.GetAsync(_baseUrl + "Member/" + memberId);
+            var response = await _httpClient.GetAsync(_baseUrl + "member/list");
             response.EnsureSuccessStatusCode();
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            return JsonSerializer.Deserialize<MemberApiResponse>(json, options);
+        }
+
+        public async Task<MemberApiResponse?> GetMembersByCoopAsync(String coopCode)
+        {
+            var response = await _httpClient.GetAsync(_baseUrl + "member/list-by-coop/" + coopCode);
+            response.EnsureSuccessStatusCode();
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            return JsonSerializer.Deserialize<MemberApiResponse>(json, options);
+        }
+
+        public async Task<MemberApiResponse?> GetMemberAsync(String memberCode)
+        {
+            var response = await _httpClient.GetAsync(_baseUrl + "member/code/" + memberCode);
+            response.EnsureSuccessStatusCode();
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            return JsonSerializer.Deserialize<MemberApiResponse>(json, options);
+        }
+
+        public async Task<BalanceApiResponse?> GetBalancesByCoopAsync(string coopCode)
+        {
+            var response = await _httpClient.GetAsync(_baseUrl + "balance/coop/" + coopCode);
+            response.EnsureSuccessStatusCode();
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            return JsonSerializer.Deserialize<BalanceApiResponse>(json, options);
+        }
+
+        public async Task<BalanceApiResponse?> GetBalanceByMemberAsync(string memberCode)
+        {
+            var response = await _httpClient.GetAsync(_baseUrl + "balance/member/" + memberCode);
+            response.EnsureSuccessStatusCode();
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            return JsonSerializer.Deserialize<BalanceApiResponse>(json, options);
+        }
+        public async Task<TransferApiResponse?> GetAllTransfersAsync()
+        {
+            var response = await _httpClient.GetAsync(_baseUrl + "transfer/all-histories");
+            response.EnsureSuccessStatusCode();
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            return JsonSerializer.Deserialize<TransferApiResponse>(json, options);
+        }
+
+        public async Task<TransferApiResponse?> GetOutgoingByMemberAsync(String memberCode)
+        {
+            var response = await _httpClient.GetAsync(_baseUrl + "transfer/history/" + memberCode);
+            response.EnsureSuccessStatusCode();
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            return JsonSerializer.Deserialize<TransferApiResponse>(json, options);
+        }
+
+        public async Task<TransferApiResponse?> GetIncomingByMemberAsync(String benefCode)
+        {
+            var response = await _httpClient.GetAsync(_baseUrl + "transfer/incoming/" + benefCode);
+            response.EnsureSuccessStatusCode();
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            return JsonSerializer.Deserialize<TransferApiResponse>(json, options);
+        }
+
+        public async Task<TransferApiResponse?> GetTransferByCodeAsync(String transferCode)
+        {
+            var response = await _httpClient.GetAsync(_baseUrl + "transfer/code/" + transferCode);
+            response.EnsureSuccessStatusCode();
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            return JsonSerializer.Deserialize<TransferApiResponse>(json, options);
+        }
+
+        public async Task<TransferApiResponse?> GetTransfersByCoopAsync(string coopCode)
+        {
+            var response = await _httpClient.GetAsync(_baseUrl + "balance/coop/" + coopCode);
+            response.EnsureSuccessStatusCode();
+
+            var json = await response.Content.ReadAsStringAsync();
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            return JsonSerializer.Deserialize<TransferApiResponse>(json, options);
         }
     }
 }

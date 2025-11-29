@@ -1,92 +1,87 @@
-﻿using System.Collections.Generic;
-using System.Net.Http;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using KoperasiFufufafa.Operation.Api.Connectors;
-using KoperasiFufufafa.Operation.Api.Models;
 using System.Text.Json;
-using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 
 namespace KoperasiFufufafa.Api.Connectors
 {
-    public class ConnectorPost : ApiConnector
+    class ConnectorPost
     {
-        private readonly string _baseUrl = "https://braveman.com/api/";
+        private readonly HttpClient _httpClient = new HttpClient();
+        private String _baseUrl = "http://localhost:20254/";
 
-        public ConnectorPost(HttpClient httpClient) : base(httpClient)
-        {
-        }
-
-        public async Task<TResponse> Post<TResponse, TPayload>(string endpoint, TPayload payload)
-            where TResponse : ApiResponse
-            where TPayload : ApiPayloadBase
+        public async Task<CoopApiResponse?> CoopRegistrationAsync(CoopPayload data)
         {
             var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
-            var json = JsonSerializer.Serialize(payload, options);
+            string json = JsonSerializer.Serialize(data, options);
+
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var url = _baseUrl + endpoint;
-            HttpResponseMessage response = await HttpClient.PostAsync(url, content);
+            HttpResponseMessage response = await _httpClient.PostAsync(_baseUrl + "coop/save", content);
             response.EnsureSuccessStatusCode();
 
             string responseJson = await response.Content.ReadAsStringAsync();
-            return JsonSerializer.Deserialize<TResponse>(responseJson, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase, ReferenceHandler = ReferenceHandler.IgnoreCycles });
+
+            return JsonSerializer.Deserialize<CoopApiResponse>(responseJson, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
         }
 
-        public async Task<MemberRegistrationApiResponse> MemberRegistrationApiPost(MemberRegistrationApiPayload payload)
+        public async Task<MemberApiResponse?> MemberRegistrationAsync(MemberPayload data)
         {
             var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
-            var json = JsonSerializer.Serialize(payload, options);
+            string json = JsonSerializer.Serialize(data, options);
+
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var url = _baseUrl + "memberregistrationapi";
-            HttpResponseMessage response = await HttpClient.PostAsync(url, content);
+            HttpResponseMessage response = await _httpClient.PostAsync(_baseUrl + "member/save", content);
             response.EnsureSuccessStatusCode();
 
             string responseJson = await response.Content.ReadAsStringAsync();
-            return JsonSerializer.Deserialize<MemberRegistrationApiResponse>(responseJson, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+
+            return JsonSerializer.Deserialize<MemberApiResponse>(responseJson, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
         }
 
-        public async Task<DeleteApiResponse> DeleteApiPost(DeleteApiPayload payload)
+        public async Task<BalanceApiResponse?> BalanceUpdateAsync(BalancePayload data)
         {
             var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
-            var json = JsonSerializer.Serialize(payload, options);
+            string json = JsonSerializer.Serialize(data, options);
+
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var url = _baseUrl + "deleteapi";
-            HttpResponseMessage response = await HttpClient.PostAsync(url, content);
+            HttpResponseMessage response = await _httpClient.PostAsync(_baseUrl + "balance/sync", content);
             response.EnsureSuccessStatusCode();
 
             string responseJson = await response.Content.ReadAsStringAsync();
-            return JsonSerializer.Deserialize<DeleteApiResponse>(responseJson, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+
+            return JsonSerializer.Deserialize<BalanceApiResponse>(responseJson, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
         }
 
-        public async Task<UpdateApiResponse> UpdateApiPost(UpdateApiPayload payload)
+        public async Task<TransferApiResponse?> TransferAsync(TransferPayload data)
         {
             var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
-            var json = JsonSerializer.Serialize(payload, options);
+            string json = JsonSerializer.Serialize(data, options);
+
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var url = _baseUrl + "updateapi";
-            HttpResponseMessage response = await HttpClient.PostAsync(url, content);
+            HttpResponseMessage response = await _httpClient.PostAsync(_baseUrl + "/transfer/save", content);
             response.EnsureSuccessStatusCode();
 
             string responseJson = await response.Content.ReadAsStringAsync();
-            return JsonSerializer.Deserialize<UpdateApiResponse>(responseJson, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
-        }
 
-        public async Task<TransferApiPostResponse> TransferApiPost(TransferApiPayload payload)
-        {
-            var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
-            var json = JsonSerializer.Serialize(payload, options);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var url = _baseUrl + "transferapi";
-            HttpResponseMessage response = await HttpClient.PostAsync(url, content);
-            response.EnsureSuccessStatusCode();
-
-            string responseJson = await response.Content.ReadAsStringAsync();
-            return JsonSerializer.Deserialize<TransferApiPostResponse>(responseJson, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+            return JsonSerializer.Deserialize<TransferApiResponse>(responseJson, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
         }
     }
 }

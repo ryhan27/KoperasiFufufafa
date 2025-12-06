@@ -21,5 +21,10 @@ namespace KoperasiFufufafa.Forms.AdminMenu
         {
 
         }
+
+        private void AcrossTransferPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

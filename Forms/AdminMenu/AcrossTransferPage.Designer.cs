@@ -116,35 +116,35 @@
             // 
             txtBalance.Location = new Point(75, 95);
             txtBalance.Name = "txtBalance";
-            txtBalance.Size = new Size(150, 31);
+            txtBalance.Size = new Size(297, 31);
             txtBalance.TabIndex = 7;
             // 
             // txtAmount
             // 
             txtAmount.Location = new Point(75, 252);
             txtAmount.Name = "txtAmount";
-            txtAmount.Size = new Size(150, 31);
+            txtAmount.Size = new Size(297, 31);
             txtAmount.TabIndex = 8;
             // 
             // txtBenficiary
             // 
             txtBenficiary.Location = new Point(75, 169);
             txtBenficiary.Name = "txtBenficiary";
-            txtBenficiary.Size = new Size(150, 31);
+            txtBenficiary.Size = new Size(297, 31);
             txtBenficiary.TabIndex = 10;
             // 
             // txtRemarks
             // 
             txtRemarks.Location = new Point(75, 429);
             txtRemarks.Name = "txtRemarks";
-            txtRemarks.Size = new Size(150, 31);
+            txtRemarks.Size = new Size(297, 31);
             txtRemarks.TabIndex = 11;
             // 
             // txtTransferRef
             // 
             txtTransferRef.Location = new Point(75, 354);
             txtTransferRef.Name = "txtTransferRef";
-            txtTransferRef.Size = new Size(150, 31);
+            txtTransferRef.Size = new Size(297, 31);
             txtTransferRef.TabIndex = 12;
             // 
             // dataGridIncoming
@@ -205,6 +205,7 @@
             Controls.Add(label1);
             Name = "AcrossTransferPage";
             Size = new Size(944, 581);
+            Load += AcrossTransferPage_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridIncoming).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);

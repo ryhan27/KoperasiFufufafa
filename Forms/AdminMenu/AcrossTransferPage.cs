@@ -42,4 +42,5 @@ namespace KoperasiFufufafa.Forms.MemberMenus
                 if (result == DialogResult.Yes)
                 {
                     string message;
-                    
+
+                }

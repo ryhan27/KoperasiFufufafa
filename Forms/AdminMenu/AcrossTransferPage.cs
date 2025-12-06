@@ -2,6 +2,7 @@
 using KoperasiFufufafa.Api.Models;
 using KoperasiFufufafa.Data;
 using KoperasiFufufafa.Models;
+using KoperasiFufufafa.Service;
 using KoperasiFufufafa.Services;
 using System;
 using System.Collections.Generic;
@@ -28,18 +29,174 @@ namespace KoperasiFufufafa.Forms.MemberMenus
         private async void AcrossTransferPage_Load(object sender, EventArgs e)
         {
             timerInbox.Enabled = false;
-
-            if (loggedMember.ReferenceId == null ||
-                loggedMember.ReferenceId == "" ||
-                loggedMember.ReferenceId == "--")
+            if (loggedMember.ReferenceId == null || loggedMember.ReferenceId == "" || loggedMember.ReferenceId == "--")
             {
-                DialogResult result = MessageBox.Show(
-                    "You do not have a privilege to Use Across Transfer. Registration Now?",
-                    "Invalid",
-                    MessageBoxButtons.YesNo
-                );
-
+                DialogResult result = MessageBox.Show("You do not have a privilege to Use Across Transfer. Registration Now?", "Invalid", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    string message;
-                    
+                    String message;
+                    using (var db = new AppDbContext())
+                    {
+                        message = await MemberRegistration(db);
+                    }
+                    MessageBox.Show(message, "Registration Info", MessageBoxButtons.OK);
+                }
+            }
+            else
+            {
+                timerInbox.Enabled = true;
+            }
+        }
+        private async Task<string> MemberRegistration(AppDbContext db)
+        {
+            string message = "Success";
+
+            MemberServices memberService = new MemberServices(db);
+            ConnectorPost connectorPost = new ConnectorPost();
+            ConfigurationService configurationService = new ConfigurationService(db);
+            Configuration? configuration = await configurationService.GetConfig();
+
+            if (configuration == null)
+                message = "Configuration not found!";
+
+            if (configuration != null)
+            {
+                if (configuration.terminologi3 == null || configuration.terminologi3 == "--")
+                {
+                    message = "Coop not registered to Across System. Please contact administrator.";
+                }
+                try
+                {
+                    MemberApiResponse? memberApiResponse = await connectorPost.MemberRegistrationAsync(
+                        new MemberPayload
+                        {
+                            Name = loggedMember.FullName,
+                            Address = loggedMember.Address,
+                            Code = loggedMember.MemberId,
+                            CoopCode = configuration.terminologi3!
+                        });
+
+                    if (memberApiResponse != null && memberApiResponse.ResponseCode == "00")
+                    {
+                        loggedMember.ReferenceId = configuration.terminologi3!;
+                        memberService.Update(loggedMember);
+
+                        balanceService balanceService = new BalanceService(db);
+                        balanceService.setBalance(loggedMember.MemberId);
+
+                        timerInbox.Enabled = true;
+                    }
+                    else
+                    {
+                        message = "Failed to register member to across system: "
+                                  + memberApiResponse?.ResponseMessage;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    message = ex.Message;
+                }
+            }
+
+            return message;
+        }
+        private async void buttonSubmit_Click(object sender, EventArgs e)
+        {
+            AppDbContext db = new AppDbContext();
+            ConfigurationService configService = new ConfigurationService(db);
+            Configuration? config = await configService.GetConfig();
+            ConnectorPost connectorPost = new ConnectorPost();
+            Double transferAmount = Double.Parse(textAmount.Text);
+
+            TransferApiResponse? response = await connectorPost.TransferAsync(new TransferPayload
+            {
+                amount = transferAmount,
+                benefCode = textBenef.Text,
+                coopCode = loggedMember.ReferenceId,
+                memberCode = loggedMember.MemberId,
+                fee = Double.Parse(config?.transferAcrossFee.ToString()),
+                remarks = textRemarks.Text,
+                transferRef = textTransRef.Text,
+            });
+
+            if (response != null && response.ResponseCode == "00")
+            {
+                BalanceService balanceService = new BalanceService(db);
+                Balance? balance = await balanceService.getBalance(loggedMember.MemberId);
+                if (balance != null)
+                {
+                    balance.Amount = Decimal.Parse(transferAmount.ToString());
+                    balance.UpdateOn = DateTime.Now;
+                    balance.TransactionName = "Across Transfer";
+                    balance.Flow = "OUT";
+                    balanceService.Update(balance);
+
+                    BalanceApiResponse? balanceApiResponse = await connectorPost.BalanceUpdateAsync(new BalancePayload
+                    {
+                        amount = Double.Parse(balance.Amount.ToString()),
+                        memberCode = loggedMember.MemberId,
+                    });
+
+                    if (balanceApiResponse != null && balanceApiResponse.ResponseCode == "00")
+                    {
+                        MessageBox.Show("Transfer Successful", "Success");
+                    }
+                }
+            }
+        }
+
+        private async void timerInbox_Tick(object sender, EventArgs e)
+        {
+            timerInbox.Stop();
+            try
+            {
+
+                Console.WriteLine("Retrieving...");
+                ConnectorsGet connectorGet = new ConnectorsGet();
+                TransferApiResponse? responseOutgoing = await connectorGet.GetOutgoingByMemberAsync(loggedMember.MemberId);
+                if (responseOutgoing != null && responseOutgoing.ResponseCode == "00")
+                {
+                    dgvOutgoing.DataSource = responseOutgoing.TransferList;
+                    dgvOutgoing.Columns["Id"].Visible = false;
+                    dgvOutgoing.Columns["MemberCode"].Visible = false;
+                    dgvOutgoing.Columns["CoopCode"].Visible = false;
+                    dgvOutgoing.Columns["BenefCode"].HeaderText = "Beneficiary";
+                    dgvOutgoing.Columns["UpdateOn"].Visible = false;
+                    dgvOutgoing.Columns["TransferRef"].HeaderText = "Reference";
+                    dgvOutgoing.Columns["TransferDate"].HeaderText = "Date";
+                    dgvOutgoing.Columns["Amount"].HeaderText = "Amount";
+                    dgvOutgoing.Columns["Fee"].HeaderText = "Fee";
+                    dgvOutgoing.Columns["Remarks"].HeaderText = "Remarks";
+                    dgvOutgoing.Columns["TransactionCode"].HeaderText = "Transaction Code";
+                }
+
+                // INCOMING
+                string benefCode = "Refenced Id : " + loggedMember.MemberId;
+
+                TransferApiResponse? responseIncoming =
+                    await connecterGet.GetIncomingByMemberAsync(loggedMember.MemberId);
+
+                if (responseIncoming != null && responseOutgoing.ResponseCode == "00")
+                {
+                    dgvIncoming.DataSource = responseIncoming.TransferList;
+                    dgvIncoming.Columns["Id"].Visible = false;
+                    dgvIncoming.Columns["MemberCode"].HeaderText = "Member Code";
+                    dgvIncoming.Columns["BenefCode"].Visible = false;
+                    dgvIncoming.Columns["CoopCode"].Visible = false;
+                    dgvIncoming.Columns["TransferRef"].HeaderText = "Reference";
+                    dgvIncoming.Columns["TransferDate"].HeaderText = "Date";
+                    dgvIncoming.Columns["Amount"].HeaderText = "Amount";
+                    dgvIncoming.Columns["Fee"].HeaderText = "Fee";
+                    dgvIncoming.Columns["Remarks"].HeaderText = "Remarks";
+                    dgvIncoming.Columns["TransactionCode"].HeaderText = "Transaction Code";
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+            finally
+            {
+                timerInbox.Start(); // restart setelah selesai
+            }
+        }

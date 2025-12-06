@@ -10,15 +10,11 @@ namespace KoperasiFufufafa.Models
 {
     public class Member
     {
-        public int Id { get; set; }
-
         [Required, MaxLength(100)] public string Username { get; set; }
         public int Id { get; set; }
-        [Required] public int MemberId { get; set; }
         public decimal Amount { get; set; }
         public DateTime PaymentDate { get; set; } = DateTime.UtcNow;
         public string? ProofPath { get; set; }
-        public Member Member { get; set; } = null!;
         [Required] public string AccessList { get; set; }
         public DateTime updateOn { get; set; }
     }

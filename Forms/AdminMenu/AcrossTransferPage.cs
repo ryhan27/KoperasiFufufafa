@@ -24,6 +24,24 @@ namespace KoperasiFufufafa.Forms.AdminMenu
 
         private void AcrossTransferPage_Load(object sender, EventArgs e)
         {
+            timerInbox.Enabled = false;
+            if (loggedMember.ReferenceId == null || loggedMember.ReferenceId == "" || loggedMember.ReferenceId == "--")
+            {
+                DialogResult result = MessageBox.Show("You do not have a privilege to Use Across Transfer. Registration Now?", "Invalid", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    String message;
+                    using (var db = new AppDbContext())
+                    {
+                        message = await MemberRegistration(db);
+                    }
+                    MessageBox.Show(message, "Registration Info", MessageBoxButtons.OK);
+                }
+            }
+            else
+            {
+                timerInbox.Enabled = true;
+            }
 
         }
     }

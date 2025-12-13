@@ -142,7 +142,7 @@
             txtSavingID.Name = "txtSavingID";
             txtSavingID.Size = new Size(211, 23);
             txtSavingID.TabIndex = 13;
-            txtSavingID.TextChanged += this.textBox1_TextChanged_1;
+            xtSavingID.TextChanged += this.textBox1_TextChanged_1;
             // 
             // txtAdminFee
             // 
@@ -421,10 +421,10 @@
             Controls.Add(dgvSavingPage);
             Controls.Add(btnNewSaving);
             Controls.Add(bnApplySaving);
-            Controls.Add(button4);
-            Controls.Add(button3);
             Controls.Add(button1);
             Controls.Add(button2);
+            Controls.Add(button3);
+            Controls.Add(button1);
             Controls.Add(txtSlipGaji);
             Controls.Add(textBox3);
             Controls.Add(textBox4);
@@ -476,7 +476,7 @@
         private TextBox txtDocument;
         private TextBox txtDueDate;
         private Button btnBrowse;
-        private Button btnShow;
+        private Button buttonShow;
         private ComboBox cbxSavingType;
         private Button button1;
         private Button button2;

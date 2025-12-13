@@ -200,3 +200,5 @@ namespace KoperasiFufufafa.Forms.MemberMenus
                 timerInbox.Start(); // restart setelah selesai
             }
         }
+    }
+}

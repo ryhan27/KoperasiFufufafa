@@ -31,13 +31,13 @@
             llAmount = new Label();
             lblRate = new Label();
             lblSubtotal = new Label();
-            textBox1 = new TextBox();
+            txtAmount = new TextBox();
             lblFee = new Label();
             lblTotal = new Label();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
+            txtRate = new TextBox();
+            txtFee = new TextBox();
+            txtSubtotal = new TextBox();
+            txtTotal = new TextBox();
             btnSubmit = new Button();
             btnClear = new Button();
             lblExchange = new Label();
@@ -46,101 +46,115 @@
             // llAmount
             // 
             llAmount.AutoSize = true;
-            llAmount.Location = new Point(64, 67);
+            llAmount.Location = new Point(91, 112);
+            llAmount.Margin = new Padding(4, 0, 4, 0);
             llAmount.Name = "llAmount";
-            llAmount.Size = new Size(44, 15);
+            llAmount.Size = new Size(67, 25);
             llAmount.TabIndex = 0;
             llAmount.Text = "Amout";
             // 
             // lblRate
             // 
             lblRate.AutoSize = true;
-            lblRate.Location = new Point(64, 101);
+            lblRate.Location = new Point(91, 168);
+            lblRate.Margin = new Padding(4, 0, 4, 0);
             lblRate.Name = "lblRate";
-            lblRate.Size = new Size(30, 15);
+            lblRate.Size = new Size(47, 25);
             lblRate.TabIndex = 1;
             lblRate.Text = "Rate";
             // 
             // lblSubtotal
             // 
             lblSubtotal.AutoSize = true;
-            lblSubtotal.Location = new Point(64, 131);
+            lblSubtotal.Location = new Point(91, 218);
+            lblSubtotal.Margin = new Padding(4, 0, 4, 0);
             lblSubtotal.Name = "lblSubtotal";
-            lblSubtotal.Size = new Size(51, 15);
+            lblSubtotal.Size = new Size(79, 25);
             lblSubtotal.TabIndex = 2;
             lblSubtotal.Text = "Subtotal";
             // 
-            // textBox1
+            // txtAmount
             // 
-            textBox1.Location = new Point(138, 59);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(149, 23);
-            textBox1.TabIndex = 3;
+            txtAmount.Location = new Point(197, 98);
+            txtAmount.Margin = new Padding(4, 5, 4, 5);
+            txtAmount.Name = "txtAmount";
+            txtAmount.Size = new Size(211, 31);
+            txtAmount.TabIndex = 3;
+            txtAmount.TextChanged += txtAmount_TextChanged;
             // 
             // lblFee
             // 
             lblFee.AutoSize = true;
-            lblFee.Location = new Point(64, 160);
+            lblFee.Location = new Point(91, 267);
+            lblFee.Margin = new Padding(4, 0, 4, 0);
             lblFee.Name = "lblFee";
-            lblFee.Size = new Size(25, 15);
+            lblFee.Size = new Size(39, 25);
             lblFee.TabIndex = 4;
             lblFee.Text = "Fee";
             // 
             // lblTotal
             // 
             lblTotal.AutoSize = true;
-            lblTotal.Location = new Point(64, 193);
+            lblTotal.Location = new Point(91, 322);
+            lblTotal.Margin = new Padding(4, 0, 4, 0);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(33, 15);
+            lblTotal.Size = new Size(49, 25);
             lblTotal.TabIndex = 5;
             lblTotal.Text = "Total";
             // 
-            // textBox2
+            // txtRate
             // 
-            textBox2.Location = new Point(138, 93);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(149, 23);
-            textBox2.TabIndex = 6;
+            txtRate.Location = new Point(197, 155);
+            txtRate.Margin = new Padding(4, 5, 4, 5);
+            txtRate.Name = "txtRate";
+            txtRate.ReadOnly = true;
+            txtRate.Size = new Size(211, 31);
+            txtRate.TabIndex = 6;
             // 
-            // textBox3
+            // txtFee
             // 
-            textBox3.Location = new Point(138, 152);
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(149, 23);
-            textBox3.TabIndex = 7;
+            txtFee.Location = new Point(197, 253);
+            txtFee.Margin = new Padding(4, 5, 4, 5);
+            txtFee.Name = "txtFee";
+            txtFee.ReadOnly = true;
+            txtFee.Size = new Size(211, 31);
+            txtFee.TabIndex = 7;
             // 
-            // textBox4
+            // txtSubtotal
             // 
-            textBox4.Location = new Point(138, 123);
-            textBox4.Name = "textBox4";
-            textBox4.ReadOnly = true;
-            textBox4.Size = new Size(149, 23);
-            textBox4.TabIndex = 8;
+            txtSubtotal.Location = new Point(197, 205);
+            txtSubtotal.Margin = new Padding(4, 5, 4, 5);
+            txtSubtotal.Name = "txtSubtotal";
+            txtSubtotal.ReadOnly = true;
+            txtSubtotal.Size = new Size(211, 31);
+            txtSubtotal.TabIndex = 8;
             // 
-            // textBox5
+            // txtTotal
             // 
-            textBox5.Location = new Point(138, 185);
-            textBox5.Name = "textBox5";
-            textBox5.ReadOnly = true;
-            textBox5.Size = new Size(149, 23);
-            textBox5.TabIndex = 9;
+            txtTotal.Location = new Point(197, 308);
+            txtTotal.Margin = new Padding(4, 5, 4, 5);
+            txtTotal.Name = "txtTotal";
+            txtTotal.ReadOnly = true;
+            txtTotal.Size = new Size(211, 31);
+            txtTotal.TabIndex = 9;
             // 
             // btnSubmit
             // 
-            btnSubmit.Location = new Point(138, 240);
+            btnSubmit.Location = new Point(197, 400);
+            btnSubmit.Margin = new Padding(4, 5, 4, 5);
             btnSubmit.Name = "btnSubmit";
-            btnSubmit.Size = new Size(64, 25);
+            btnSubmit.Size = new Size(91, 42);
             btnSubmit.TabIndex = 10;
             btnSubmit.Text = "Submit";
             btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(223, 240);
+            btnClear.Location = new Point(319, 400);
+            btnClear.Margin = new Padding(4, 5, 4, 5);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(64, 25);
+            btnClear.Size = new Size(91, 42);
             btnClear.TabIndex = 11;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
@@ -149,31 +163,33 @@
             // 
             lblExchange.AutoSize = true;
             lblExchange.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblExchange.Location = new Point(138, 0);
+            lblExchange.Location = new Point(197, 0);
+            lblExchange.Margin = new Padding(4, 0, 4, 0);
             lblExchange.Name = "lblExchange";
-            lblExchange.Size = new Size(132, 21);
+            lblExchange.Size = new Size(197, 32);
             lblExchange.TabIndex = 12;
             lblExchange.Text = "EXCHANGE USD";
             // 
             // ExchangePage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(lblExchange);
             Controls.Add(btnClear);
             Controls.Add(btnSubmit);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
+            Controls.Add(txtTotal);
+            Controls.Add(txtSubtotal);
+            Controls.Add(txtFee);
+            Controls.Add(txtRate);
             Controls.Add(lblTotal);
             Controls.Add(lblFee);
-            Controls.Add(textBox1);
+            Controls.Add(txtAmount);
             Controls.Add(lblSubtotal);
             Controls.Add(lblRate);
             Controls.Add(llAmount);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "ExchangePage";
-            Size = new Size(663, 560);
+            Size = new Size(947, 933);
             Load += ExchangePage_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -184,13 +200,13 @@
         private Label llAmount;
         private Label lblRate;
         private Label lblSubtotal;
-        private TextBox textBox1;
+        private TextBox txtAmount;
         private Label lblFee;
         private Label lblTotal;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox txtRate;
+        private TextBox txtFee;
+        private TextBox txtSubtotal;
+        private TextBox txtTotal;
         private Button btnSubmit;
         private Button btnClear;
         private Label lblExchange;

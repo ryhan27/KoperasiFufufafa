@@ -160,5 +160,12 @@ namespace KoperasiFufufafa.Forms
             this.Text = title + " << Loan Page >>";
             route(new LoanPage(loggedMember));
         }
+        private void exchangeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Text = title + " << Exchange Transfer Page >>";
+            route(new ExchangePage(loggedMember));
+        }
+
+
     }
 }

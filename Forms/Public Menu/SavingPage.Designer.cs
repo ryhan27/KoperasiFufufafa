@@ -35,42 +35,42 @@
             lblInterestFine = new Label();
             lblDueDate = new Label();
             lblDocumentKK = new Label();
-            txtSavingID = new TextBox();
+            txtSaviing = new TextBox();
             txtAdminFee = new TextBox();
             txtMinAmount = new TextBox();
             txtInterestFine = new TextBox();
-            txtDocument = new TextBox();
-            txtDueDate = new TextBox();
-            btnBrowse = new Button();
-            btnShow = new Button();
+            textDocKK = new TextBox();
+            textDueDate = new TextBox();
+            btnBrowsekk = new Button();
+            btnShowkk = new Button();
             cbxSavingType = new ComboBox();
-            button1 = new Button();
-            button2 = new Button();
-            txtSlipGaji = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            btnShowKtp = new Button();
+            btnBrowseKtp = new Button();
+            textDocSlip = new TextBox();
+            textDocKtp = new TextBox();
+            txtMaxAmount = new TextBox();
             txtTenor = new TextBox();
-            txtAmount = new TextBox();
+            textAmount = new TextBox();
             lblDocumentSlipGaji = new Label();
             lblDocumentKTP = new Label();
             lblMaxAmount = new Label();
             lblTenor = new Label();
             lblInterest = new Label();
             lblAmount = new Label();
-            button3 = new Button();
-            button4 = new Button();
-            bnApplySaving = new Button();
+            btnBrowsegaji = new Button();
+            btnShowgaji = new Button();
+            btnApply = new Button();
             btnNewSaving = new Button();
-            fine = new DataGridViewTextBoxColumn();
-            tenorleft = new DataGridViewTextBoxColumn();
-            outstanding = new DataGridViewTextBoxColumn();
-            LoanId = new DataGridViewTextBoxColumn();
+            dataGridVeiwSaving = new DataGridView();
             Id = new DataGridViewTextBoxColumn();
-            dgvSavingPage = new DataGridView();
-            txtInterest = new TextBox();
+            textLoanId = new DataGridViewTextBoxColumn();
+            outstanding = new DataGridViewTextBoxColumn();
+            tenorleft = new DataGridViewTextBoxColumn();
+            fine = new DataGridViewTextBoxColumn();
+            textInterest = new TextBox();
             btnReload = new Button();
             lblSaving = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvSavingPage).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridVeiwSaving).BeginInit();
             SuspendLayout();
             // 
             // lblSavingID
@@ -136,13 +136,12 @@
             lblDocumentKK.TabIndex = 6;
             lblDocumentKK.Text = "Document KK";
             // 
-            // txtSavingID
+            // txtSaviing
             // 
-            txtSavingID.Location = new Point(63, 58);
-            txtSavingID.Name = "txtSavingID";
-            txtSavingID.Size = new Size(211, 23);
-            txtSavingID.TabIndex = 13;
-            txtSavingID.TextChanged += this.textBox1_TextChanged_1;
+            txtSaviing.Location = new Point(63, 58);
+            txtSaviing.Name = "txtSaviing";
+            txtSaviing.Size = new Size(211, 23);
+            txtSaviing.TabIndex = 13;
             // 
             // txtAdminFee
             // 
@@ -157,7 +156,6 @@
             txtMinAmount.Name = "txtMinAmount";
             txtMinAmount.Size = new Size(211, 23);
             txtMinAmount.TabIndex = 17;
-            txtMinAmount.TextChanged += this.textBox5_TextChanged;
             // 
             // txtInterestFine
             // 
@@ -166,38 +164,38 @@
             txtInterestFine.Size = new Size(211, 23);
             txtInterestFine.TabIndex = 19;
             // 
-            // txtDocument
+            // textDocKK
             // 
-            txtDocument.Location = new Point(63, 360);
-            txtDocument.Name = "txtDocument";
-            txtDocument.Size = new Size(211, 23);
-            txtDocument.TabIndex = 22;
+            textDocKK.Location = new Point(63, 360);
+            textDocKK.Name = "textDocKK";
+            textDocKK.Size = new Size(211, 23);
+            textDocKK.TabIndex = 22;
             // 
-            // txtDueDate
+            // textDueDate
             // 
-            txtDueDate.Location = new Point(63, 306);
-            txtDueDate.Name = "txtDueDate";
-            txtDueDate.Size = new Size(211, 23);
-            txtDueDate.TabIndex = 23;
+            textDueDate.Location = new Point(63, 306);
+            textDueDate.Name = "textDueDate";
+            textDueDate.Size = new Size(211, 23);
+            textDueDate.TabIndex = 23;
             // 
-            // btnBrowse
+            // btnBrowsekk
             // 
-            btnBrowse.Location = new Point(63, 395);
-            btnBrowse.Name = "btnBrowse";
-            btnBrowse.Size = new Size(75, 23);
-            btnBrowse.TabIndex = 25;
-            btnBrowse.Text = "Browse";
-            btnBrowse.UseVisualStyleBackColor = true;
-            btnBrowse.Click += button1_Click;
+            btnBrowsekk.Location = new Point(63, 395);
+            btnBrowsekk.Name = "btnBrowsekk";
+            btnBrowsekk.Size = new Size(75, 23);
+            btnBrowsekk.TabIndex = 25;
+            btnBrowsekk.Text = "Browse";
+            btnBrowsekk.UseVisualStyleBackColor = true;
+            btnBrowsekk.Click += button1_Click;
             // 
-            // btnShow
+            // btnShowkk
             // 
-            btnShow.Location = new Point(199, 395);
-            btnShow.Name = "btnShow";
-            btnShow.Size = new Size(75, 23);
-            btnShow.TabIndex = 26;
-            btnShow.Text = "Show";
-            btnShow.UseVisualStyleBackColor = true;
+            btnShowkk.Location = new Point(199, 395);
+            btnShowkk.Name = "btnShowkk";
+            btnShowkk.Size = new Size(75, 23);
+            btnShowkk.TabIndex = 26;
+            btnShowkk.Text = "Show";
+            btnShowkk.UseVisualStyleBackColor = true;
             // 
             // cbxSavingType
             // 
@@ -207,44 +205,44 @@
             cbxSavingType.Size = new Size(211, 23);
             cbxSavingType.TabIndex = 27;
             // 
-            // button1
+            // btnShowKtp
             // 
-            button1.Location = new Point(443, 284);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 42;
-            button1.Text = "Show";
-            button1.UseVisualStyleBackColor = true;
+            btnShowKtp.Location = new Point(443, 284);
+            btnShowKtp.Name = "btnShowKtp";
+            btnShowKtp.Size = new Size(75, 23);
+            btnShowKtp.TabIndex = 42;
+            btnShowKtp.Text = "Show";
+            btnShowKtp.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnBrowseKtp
             // 
-            button2.Location = new Point(308, 284);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 41;
-            button2.Text = "Browse";
-            button2.UseVisualStyleBackColor = true;
+            btnBrowseKtp.Location = new Point(308, 284);
+            btnBrowseKtp.Name = "btnBrowseKtp";
+            btnBrowseKtp.Size = new Size(75, 23);
+            btnBrowseKtp.TabIndex = 41;
+            btnBrowseKtp.Text = "Browse";
+            btnBrowseKtp.UseVisualStyleBackColor = true;
             // 
-            // txtSlipGaji
+            // textDocSlip
             // 
-            txtSlipGaji.Location = new Point(311, 360);
-            txtSlipGaji.Name = "txtSlipGaji";
-            txtSlipGaji.Size = new Size(211, 23);
-            txtSlipGaji.TabIndex = 39;
+            textDocSlip.Location = new Point(311, 360);
+            textDocSlip.Name = "textDocSlip";
+            textDocSlip.Size = new Size(211, 23);
+            textDocSlip.TabIndex = 39;
             // 
-            // textBox3
+            // textDocKtp
             // 
-            textBox3.Location = new Point(307, 252);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(211, 23);
-            textBox3.TabIndex = 38;
+            textDocKtp.Location = new Point(307, 252);
+            textDocKtp.Name = "textDocKtp";
+            textDocKtp.Size = new Size(211, 23);
+            textDocKtp.TabIndex = 38;
             // 
-            // textBox4
+            // txtMaxAmount
             // 
-            textBox4.Location = new Point(307, 208);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(211, 23);
-            textBox4.TabIndex = 37;
+            txtMaxAmount.Location = new Point(307, 208);
+            txtMaxAmount.Name = "txtMaxAmount";
+            txtMaxAmount.Size = new Size(211, 23);
+            txtMaxAmount.TabIndex = 37;
             // 
             // txtTenor
             // 
@@ -253,12 +251,12 @@
             txtTenor.Size = new Size(211, 23);
             txtTenor.TabIndex = 36;
             // 
-            // txtAmount
+            // textAmount
             // 
-            txtAmount.Location = new Point(307, 58);
-            txtAmount.Name = "txtAmount";
-            txtAmount.Size = new Size(211, 23);
-            txtAmount.TabIndex = 35;
+            textAmount.Location = new Point(307, 58);
+            textAmount.Name = "textAmount";
+            textAmount.Size = new Size(211, 23);
+            textAmount.TabIndex = 35;
             // 
             // lblDocumentSlipGaji
             // 
@@ -315,32 +313,32 @@
             lblAmount.Text = "Amount";
             lblAmount.Click += label7_Click;
             // 
-            // button3
+            // btnBrowsegaji
             // 
-            button3.Location = new Point(311, 395);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 44;
-            button3.Text = "Browse";
-            button3.UseVisualStyleBackColor = true;
+            btnBrowsegaji.Location = new Point(311, 395);
+            btnBrowsegaji.Name = "btnBrowsegaji";
+            btnBrowsegaji.Size = new Size(75, 23);
+            btnBrowsegaji.TabIndex = 44;
+            btnBrowsegaji.Text = "Browse";
+            btnBrowsegaji.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnShowgaji
             // 
-            button4.Location = new Point(447, 395);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 45;
-            button4.Text = "Show";
-            button4.UseVisualStyleBackColor = true;
+            btnShowgaji.Location = new Point(447, 395);
+            btnShowgaji.Name = "btnShowgaji";
+            btnShowgaji.Size = new Size(75, 23);
+            btnShowgaji.TabIndex = 45;
+            btnShowgaji.Text = "Show";
+            btnShowgaji.UseVisualStyleBackColor = true;
             // 
-            // bnApplySaving
+            // btnApply
             // 
-            bnApplySaving.Location = new Point(316, 469);
-            bnApplySaving.Name = "bnApplySaving";
-            bnApplySaving.Size = new Size(103, 23);
-            bnApplySaving.TabIndex = 46;
-            bnApplySaving.Text = "Aply Saving";
-            bnApplySaving.UseVisualStyleBackColor = true;
+            btnApply.Location = new Point(316, 469);
+            btnApply.Name = "btnApply";
+            btnApply.Size = new Size(103, 23);
+            btnApply.TabIndex = 46;
+            btnApply.Text = "Aply Saving";
+            btnApply.UseVisualStyleBackColor = true;
             // 
             // btnNewSaving
             // 
@@ -351,47 +349,47 @@
             btnNewSaving.Text = "New Saving";
             btnNewSaving.UseVisualStyleBackColor = true;
             // 
-            // fine
+            // dataGridVeiwSaving
             // 
-            fine.HeaderText = "fine";
-            fine.Name = "fine";
-            // 
-            // tenorleft
-            // 
-            tenorleft.HeaderText = "tenorleft";
-            tenorleft.Name = "tenorleft";
-            // 
-            // outstanding
-            // 
-            outstanding.HeaderText = "outstanding";
-            outstanding.Name = "outstanding";
-            // 
-            // LoanId
-            // 
-            LoanId.HeaderText = "LoanId";
-            LoanId.Name = "LoanId";
+            dataGridVeiwSaving.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridVeiwSaving.Columns.AddRange(new DataGridViewColumn[] { Id, textLoanId, outstanding, tenorleft, fine });
+            dataGridVeiwSaving.Location = new Point(552, 63);
+            dataGridVeiwSaving.Name = "dataGridVeiwSaving";
+            dataGridVeiwSaving.Size = new Size(410, 355);
+            dataGridVeiwSaving.TabIndex = 48;
+            dataGridVeiwSaving.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Id
             // 
             Id.HeaderText = "Id";
             Id.Name = "Id";
             // 
-            // dgvSavingPage
+            // textLoanId
             // 
-            dgvSavingPage.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvSavingPage.Columns.AddRange(new DataGridViewColumn[] { Id, LoanId, outstanding, tenorleft, fine });
-            dgvSavingPage.Location = new Point(551, 58);
-            dgvSavingPage.Name = "dgvSavingPage";
-            dgvSavingPage.Size = new Size(410, 355);
-            dgvSavingPage.TabIndex = 48;
-            dgvSavingPage.CellContentClick += dataGridView1_CellContentClick;
+            textLoanId.HeaderText = "LoanId";
+            textLoanId.Name = "textLoanId";
             // 
-            // txtInterest
+            // outstanding
             // 
-            txtInterest.Location = new Point(307, 102);
-            txtInterest.Name = "txtInterest";
-            txtInterest.Size = new Size(211, 23);
-            txtInterest.TabIndex = 49;
+            outstanding.HeaderText = "outstanding";
+            outstanding.Name = "outstanding";
+            // 
+            // tenorleft
+            // 
+            tenorleft.HeaderText = "tenorleft";
+            tenorleft.Name = "tenorleft";
+            // 
+            // fine
+            // 
+            fine.HeaderText = "fine";
+            fine.Name = "fine";
+            // 
+            // textInterest
+            // 
+            textInterest.Location = new Point(307, 102);
+            textInterest.Name = "textInterest";
+            textInterest.Size = new Size(211, 23);
+            textInterest.TabIndex = 49;
             // 
             // btnReload
             // 
@@ -417,19 +415,19 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(lblSaving);
             Controls.Add(btnReload);
-            Controls.Add(txtInterest);
-            Controls.Add(dgvSavingPage);
+            Controls.Add(textInterest);
+            Controls.Add(dataGridVeiwSaving);
             Controls.Add(btnNewSaving);
-            Controls.Add(bnApplySaving);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button1);
-            Controls.Add(button2);
-            Controls.Add(txtSlipGaji);
-            Controls.Add(textBox3);
-            Controls.Add(textBox4);
+            Controls.Add(btnApply);
+            Controls.Add(btnShowgaji);
+            Controls.Add(btnBrowsegaji);
+            Controls.Add(btnShowKtp);
+            Controls.Add(btnBrowseKtp);
+            Controls.Add(textDocSlip);
+            Controls.Add(textDocKtp);
+            Controls.Add(txtMaxAmount);
             Controls.Add(txtTenor);
-            Controls.Add(txtAmount);
+            Controls.Add(textAmount);
             Controls.Add(lblDocumentSlipGaji);
             Controls.Add(lblDocumentKTP);
             Controls.Add(lblMaxAmount);
@@ -437,14 +435,14 @@
             Controls.Add(lblInterest);
             Controls.Add(lblAmount);
             Controls.Add(cbxSavingType);
-            Controls.Add(btnShow);
-            Controls.Add(btnBrowse);
-            Controls.Add(txtDueDate);
-            Controls.Add(txtDocument);
+            Controls.Add(btnShowkk);
+            Controls.Add(btnBrowsekk);
+            Controls.Add(textDueDate);
+            Controls.Add(textDocKK);
             Controls.Add(txtInterestFine);
             Controls.Add(txtMinAmount);
             Controls.Add(txtAdminFee);
-            Controls.Add(txtSavingID);
+            Controls.Add(txtSaviing);
             Controls.Add(lblDocumentKK);
             Controls.Add(lblDueDate);
             Controls.Add(lblInterestFine);
@@ -453,9 +451,9 @@
             Controls.Add(lblSavingType);
             Controls.Add(lblSavingID);
             Name = "SavingPage";
-            Size = new Size(988, 495);
-            Load += this.SavingPage_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvSavingPage).EndInit();
+            Size = new Size(988, 519);
+            Load += SavingPage_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridVeiwSaving).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -469,40 +467,40 @@
         private Label lblInterestFine;
         private Label lblDueDate;
         private Label lblDocumentKK;
-        private TextBox txtSavingID;
+        private TextBox txtSaviing;
         private TextBox txtAdminFee;
         private TextBox txtMinAmount;
         private TextBox txtInterestFine;
-        private TextBox txtDocument;
-        private TextBox txtDueDate;
-        private Button btnBrowse;
-        private Button btnShow;
+        private TextBox textDocKK;
+        private TextBox textDueDate;
+        private Button btnBrowsekk;
+        private Button btnShowkk;
         private ComboBox cbxSavingType;
-        private Button button1;
-        private Button button2;
-        private TextBox txtSlipGaji;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private Button btnShowKtp;
+        private Button btnBrowseKtp;
+        private TextBox textDocSlip;
+        private TextBox textDocKtp;
+        private TextBox txtMaxAmount;
         private TextBox txtTenor;
-        private TextBox txtAmount;
+        private TextBox textAmount;
         private Label lblDocumentSlipGaji;
         private Label lblDocumentKTP;
         private Label lblMaxAmount;
         private Label lblTenor;
         private Label lblInterest;
         private Label lblAmount;
-        private Button button3;
-        private Button button4;
-        private Button bnApplySaving;
+        private Button btnBrowsegaji;
+        private Button btnShowgaji;
+        private Button btnApply;
         private Button btnNewSaving;
-        private DataGridViewTextBoxColumn fine;
-        private DataGridViewTextBoxColumn tenorleft;
-        private DataGridViewTextBoxColumn outstanding;
-        private DataGridViewTextBoxColumn LoanId;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridView dgvSavingPage;
-        private TextBox txtInterest;
+        private DataGridView dataGridVeiwSaving;
+        private TextBox textInterest;
         private Button btnReload;
         private Label lblSaving;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn textLoanId;
+        private DataGridViewTextBoxColumn outstanding;
+        private DataGridViewTextBoxColumn tenorleft;
+        private DataGridViewTextBoxColumn fine;
     }
 }

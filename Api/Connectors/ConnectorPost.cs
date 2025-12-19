@@ -2,16 +2,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace KoperasiFufufafa.Api.Connectors
 {
-    class ConnectorPost
+    public class ConnectorPost
     {
         private readonly HttpClient _httpClient = new HttpClient();
-        private String _baseUrl = "http://localhost:20254/";
+        private String _baseUrl = "http://103.82.242.90:20254/";
 
         public async Task<CoopApiResponse?> CoopRegistrationAsync(CoopPayload data)
         {
@@ -33,20 +34,25 @@ namespace KoperasiFufufafa.Api.Connectors
 
         public async Task<MemberApiResponse?> MemberRegistrationAsync(MemberPayload data)
         {
-            var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
-            string json = JsonSerializer.Serialize(data, options);
+           
+                var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+                string json = JsonSerializer.Serialize(data, options);
 
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                try {
+                    HttpResponseMessage response = await _httpClient.PostAsync(_baseUrl + "member/save", content);
+                    response.EnsureSuccessStatusCode();
 
-            HttpResponseMessage response = await _httpClient.PostAsync(_baseUrl + "member/save", content);
-            response.EnsureSuccessStatusCode();
+                    string responseJson = await response.Content.ReadAsStringAsync();
 
-            string responseJson = await response.Content.ReadAsStringAsync();
-
-            return JsonSerializer.Deserialize<MemberApiResponse>(responseJson, new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true
-            });
+                    return JsonSerializer.Deserialize<MemberApiResponse>(responseJson, 
+                        new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+                } catch (Exception ex) {
+                    throw new Exception("Error during Member Registration: " + ex.Message);
+                 }
         }
 
         public async Task<BalanceApiResponse?> BalanceUpdateAsync(BalancePayload data)

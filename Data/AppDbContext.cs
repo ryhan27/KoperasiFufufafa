@@ -19,17 +19,14 @@ namespace KoperasiFufufafa.Data
         public DbSet<Inhouse> Inhouses => Set<Inhouse>();
         public DbSet<Exchange> Exchanges => Set<Exchange>();
         public DbSet<Balance> Balances => Set<Balance>();
+        public DbSet<BalanceHistory> BalanceHistories => Set<BalanceHistory>();
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //var config = new ConfigurationBuilder()
-            //    .SetBasePath(AppContext.BaseDirectory)
-            //    .AddJsonFile("appsettings.json")
-            //    .Build();
             optionsBuilder.UseNpgsql("Host=103.82.242.90;Port=5434;Database=vb2_fufufafa;Username=postgres;Password=12Qpalzmxn");
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder) 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Loan>()
                 .HasOne(l => l.Member)
@@ -65,6 +62,9 @@ namespace KoperasiFufufafa.Data
                 .HasOne(x => x.Member)
                 .WithMany(m => m.Exchanges)
                 .HasForeignKey(x => x.MemberId);
+
+            modelBuilder.Entity<BalanceHistory>()
+                .HasNoKey();
 
             foreach (var entity in modelBuilder.Model.GetEntityTypes())
             {

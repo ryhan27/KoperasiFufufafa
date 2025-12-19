@@ -4,20 +4,13 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace KoperasiFufufafa.Models
 {
     public class Member
     {
-        [Required, MaxLength(100)] public string Username { get; set; }
         public int Id { get; set; }
-        public decimal Amount { get; set; }
-        public DateTime PaymentDate { get; set; } = DateTime.UtcNow;
-        public string? ProofPath { get; set; }
-        [Required] public string AccessList { get; set; }
-        public DateTime updateOn { get; set; }
-    }
+        [Required, MaxLength(100)] public string Username {  get; set; }
         [Required] public string PasswordHash { get; set; } = "";
         [Required, MaxLength(200)] public string FullName { get; set; } = "";
         public bool IsActive { get; set; } = true;
@@ -27,8 +20,8 @@ namespace KoperasiFufufafa.Models
         public string Phone { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
-        public string PhoneAlt { get; set; }
-        public DateTime ModDate { get; set; }
+        public string PhoneAlt {  get; set; }
+        public DateTime ModDate{get; set;}
         public string Status { get; set; }
         public string ReferenceId { get; set; }
         public string level { get; set; }

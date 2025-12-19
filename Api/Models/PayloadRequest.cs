@@ -2,47 +2,39 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace KoperasiFufufafa.Api.Models
 {
-    public class CoopAcross
+    public class TransferPayload
     {
-        public int Id { get; set; }
-        public string Code { get; set; } = "";
-        public string Name { get; set; } = "";
-        public string Address { get; set; } = "";
+       public String coopCode { get; set; } = "";
+        public String memberCode { get; set; } = "";
+        public String benefCode { get; set; } = "";
+        public Double amount { get; set; } 
+        public Double fee { get; set; }
+        public String transferRef { get; set; } = "";
+        public String  remarks { get; set; } = "";
     }
 
-    public class MemberAcross
+    public class  BalancePayload 
     {
-        public int Id { get; set; }
-        public string Code { get; set; } = "";
-        public string Name { get; set; } = "";
-        public string Address { get; set; } = "";
-        public CoopAcross Coop { get; set; } = new CoopAcross();
+        public String memberCode { get; set; } = "";
+        public Double amount { get; set; }
     }
 
-    public class BalanceAcross
+    public class  MemberPayload
     {
-        public int Id { get; set; }
-        public double Amount { get; set; }
-        public MemberAcross Member { get; set; } = new MemberAcross();
+        public String name { get; set; } = "";
+        public String address { get; set; } = "";
+        public String code { get; set; } = "";
+        public String coopCode { get; set; } = "";
     }
 
-    public class TransferAcross
+    public class CoopPayload
     {
-        public int Id { get; set; }
-        public double Amount { get; set; }
-        public double Fee { get; set; }
-        public double TotalAmount { get; set; }
-
-        public string CodeOrigin { get; set; } = "";
-        public string CodeBenef { get; set; } = "";
-        public string Code { get; set; } = "";
-        public string TransferRef { get; set; } = "";
-        public string Remarks { get; set; } = "";
-        public string CoopCode { get; set; } = "";
+        public String name { get; set; } = "";
+        public String address { get; set; } = "";
+        public String code { get; set; } = "";
     }
 }

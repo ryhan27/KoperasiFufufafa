@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
+            configurationToolStripMenuItem = new ToolStripMenuItem();
+            logoutToolStripMenuItem = new ToolStripMenuItem();
             memberToolStripMenuItem = new ToolStripMenuItem();
-            accesToolStripMenuItem = new ToolStripMenuItem();
+            accessToolStripMenuItem = new ToolStripMenuItem();
             productToolStripMenuItem = new ToolStripMenuItem();
-            approvalToolStripMenuItem = new ToolStripMenuItem();
-            accesCooperationToolStripMenuItem = new ToolStripMenuItem();
+            acrossCooperationToolStripMenuItem = new ToolStripMenuItem();
             panelDisplay = new Panel();
+            approvalToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, memberToolStripMenuItem, accesToolStripMenuItem, productToolStripMenuItem, approvalToolStripMenuItem, accesCooperationToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, memberToolStripMenuItem, accessToolStripMenuItem, productToolStripMenuItem, approvalToolStripMenuItem, acrossCooperationToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -51,52 +52,66 @@
             // 
             // fileToolStripMenuItem
             // 
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { configurationToolStripMenuItem, logoutToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new Size(37, 20);
             fileToolStripMenuItem.Text = "File";
-            fileToolStripMenuItem.Click += fileToolStripMenuItem_Click;
+            // 
+            // configurationToolStripMenuItem
+            // 
+            configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
+            configurationToolStripMenuItem.Size = new Size(148, 22);
+            configurationToolStripMenuItem.Text = "Configuration";
+            configurationToolStripMenuItem.Click += configurationToolStripMenuItem_Click;
+            // 
+            // logoutToolStripMenuItem
+            // 
+            logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            logoutToolStripMenuItem.Size = new Size(148, 22);
+            logoutToolStripMenuItem.Text = "Logout";
+            logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
             // 
             // memberToolStripMenuItem
             // 
             memberToolStripMenuItem.Name = "memberToolStripMenuItem";
             memberToolStripMenuItem.Size = new Size(64, 20);
             memberToolStripMenuItem.Text = "Member";
-            memberToolStripMenuItem.Click += memberToolStripMenuItem_Click_1;
+            memberToolStripMenuItem.Click += memberToolStripMenuItem_Click;
             // 
-            // accesToolStripMenuItem
+            // accessToolStripMenuItem
             // 
-            accesToolStripMenuItem.Name = "accesToolStripMenuItem";
-            accesToolStripMenuItem.Size = new Size(55, 20);
-            accesToolStripMenuItem.Text = "Access";
-            accesToolStripMenuItem.Click += accesToolStripMenuItem_Click;
+            accessToolStripMenuItem.Name = "accessToolStripMenuItem";
+            accessToolStripMenuItem.Size = new Size(55, 20);
+            accessToolStripMenuItem.Text = "Access";
+            accessToolStripMenuItem.Click += accessToolStripMenuItem_Click;
             // 
             // productToolStripMenuItem
             // 
             productToolStripMenuItem.Name = "productToolStripMenuItem";
             productToolStripMenuItem.Size = new Size(61, 20);
             productToolStripMenuItem.Text = "Product";
+            productToolStripMenuItem.Click += productToolStripMenuItem_Click;
+            // 
+            // acrossCooperationToolStripMenuItem
+            // 
+            acrossCooperationToolStripMenuItem.Name = "acrossCooperationToolStripMenuItem";
+            acrossCooperationToolStripMenuItem.Size = new Size(123, 20);
+            acrossCooperationToolStripMenuItem.Text = "Across Cooperation";
+            acrossCooperationToolStripMenuItem.Click += acrossCooperationToolStripMenuItem_Click;
+            // 
+            // panelDisplay
+            // 
+            panelDisplay.Location = new Point(0, 27);
+            panelDisplay.Name = "panelDisplay";
+            panelDisplay.Size = new Size(800, 424);
+            panelDisplay.TabIndex = 1;
             // 
             // approvalToolStripMenuItem
             // 
             approvalToolStripMenuItem.Name = "approvalToolStripMenuItem";
             approvalToolStripMenuItem.Size = new Size(67, 20);
             approvalToolStripMenuItem.Text = "Approval";
-            approvalToolStripMenuItem.Click += approvalToolStripMenuItem_Click_1;
-            // 
-            // accesCooperationToolStripMenuItem
-            // 
-            accesCooperationToolStripMenuItem.Name = "accesCooperationToolStripMenuItem";
-            accesCooperationToolStripMenuItem.Size = new Size(123, 20);
-            accesCooperationToolStripMenuItem.Text = "Across Cooperation";
-            accesCooperationToolStripMenuItem.Click += accesCooperationToolStripMenuItem_Click;
-            // 
-            // panelDisplay
-            // 
-            panelDisplay.Location = new Point(12, 27);
-            panelDisplay.Name = "panelDisplay";
-            panelDisplay.Size = new Size(776, 411);
-            panelDisplay.TabIndex = 1;
-            panelDisplay.Paint += panelDisplay_Paint;
+            approvalToolStripMenuItem.Click += approvalToolStripMenuItem_Click;
             // 
             // AdminForm
             // 
@@ -107,7 +122,7 @@
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "AdminForm";
-            Text = "AdminForm";
+            Text = "Brave Hero Cooperation";
             Load += AdminForm_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
@@ -117,14 +132,15 @@
 
         #endregion
 
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem configurationToolStripMenuItem;
+        private ToolStripMenuItem logoutToolStripMenuItem;
         private ToolStripMenuItem memberToolStripMenuItem;
-        private ToolStripMenuItem accesToolStripMenuItem;
+        private ToolStripMenuItem accessToolStripMenuItem;
+        private ToolStripMenuItem acrossCooperationToolStripMenuItem;
         private ToolStripMenuItem productToolStripMenuItem;
-        private ToolStripMenuItem approvalToolStripMenuItem;
-        private ToolStripMenuItem accesCooperationToolStripMenuItem;
         private Panel panelDisplay;
+        private ToolStripMenuItem approvalToolStripMenuItem;
     }
 }

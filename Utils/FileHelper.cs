@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BraveHeroCooperation.Utils
+namespace KoperasiFufufafa.Utils
 {
     public static class FileHelper
     {

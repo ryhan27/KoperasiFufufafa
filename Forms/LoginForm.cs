@@ -1,53 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using KoperasiFufufafa.Data;
-using KoperasiFufufafa.Forms;
+﻿using KoperasiFufufafa.Data;
 using KoperasiFufufafa.Models;
+using KoperasiFufufafa.Services;
 
-namespace KoperasiFufufafa
+namespace KoperasiFufufafa.Forms
 {
-    public partial class Form2 : Form
+    public partial class LoginForm : Form
     {
-        public Form2()
+        public Member? LoggedInUser { get; private set; }
+        public LoginForm()
         {
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Registrations form = new Registrations();
-            form.ShowDialog();
-        }
-
-        private void label4_Click(String message)
+        public void setSuccessAlert(String message)
         {
             labelSuccess.Text = message;
             labelSuccess.Visible = true;
@@ -64,11 +29,10 @@ namespace KoperasiFufufafa
                 LoggedInUser = user;
                 if (LoggedInUser.level == "admin")
                 {
-                    this.Hide();
+                    this.Hide(); // this = form login
                     AdminForm form = new AdminForm(LoggedInUser);
                     form.ShowDialog();
-                }
-                else
+                } else
                 {
                     AccessService accessService = new AccessService(db);
                     Access access = await accessService.GetAccess(user.Id);
@@ -84,7 +48,7 @@ namespace KoperasiFufufafa
                         HomeForm form = new HomeForm(LoggedInUser);
                         form.ShowDialog();
                     }
-                }
+                }       
             }
             else
             {
@@ -98,6 +62,13 @@ namespace KoperasiFufufafa
         {
             this.Hide();
             ForgotPasswordForm form = new ForgotPasswordForm();
+            form.ShowDialog();
+        }
+
+        private void buttonRegistration_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RegistrationForm form = new RegistrationForm();
             form.ShowDialog();
         }
     }

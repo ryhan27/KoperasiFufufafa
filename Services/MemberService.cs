@@ -1,0 +1,39 @@
+﻿using KoperasiFufufafa.Data;
+using KoperasiFufufafa.Models;
+
+namespace KoperasiFufufafa.Services
+{
+    public class MemberService
+    {
+        private readonly AppDbContext _db;
+        public MemberService(AppDbContext db) => _db = db;
+        public List<object> SetDropdown()
+        {
+            var list = _db.Members.OrderBy(m => m.FullName)
+                .Select(m => new
+                {
+                    m.Id,
+                    DisplayName = m.MemberId + " - " + m.FullName
+                })
+                .ToList<object>();
+            return list;
+        }
+
+        public Member? FindById(int id)
+        {
+            return _db.Members.FirstOrDefault(x => x.Id == id);
+        }
+
+        public List<Member> SetGrid()
+        {
+            return 
+                _db.Members.OrderByDescending(m=> m.ModDate).ToList<Member>();
+        }
+
+        public void Update(Member member)
+        {
+            _db.Members.Update(member);
+            _db.SaveChanges();
+        }
+    }
+}

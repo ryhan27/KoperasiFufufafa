@@ -213,5 +213,11 @@ namespace KoperasiFufufafa.Forms
             this.Text = title + " << Exchange Transfer Page >>";
             route(new ExchangePage(loggedMember));
         }
+
+        private void savingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Text = title + " << Saving Page >>";
+            route(new SavingPage(loggedMember));
+        }
     }
 }

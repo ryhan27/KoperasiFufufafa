@@ -47,7 +47,7 @@ namespace KoperasiFufufafa.Forms.AdminMenus
                     {
                         CoopApiResponse? coopApiResponse = await connectorPost.CoopRegistrationAsync(
                             new CoopPayload {
-                                name = "Koperasi Fufufafa",
+                                name = "Koperasi Engineering",
                                 address = "Tangerang",
                                 code = ""
                             });

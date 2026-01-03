@@ -54,7 +54,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(21, 44);
+            label1.Location = new Point(23, 44);
             label1.Name = "label1";
             label1.Size = new Size(48, 15);
             label1.TabIndex = 0;
@@ -62,14 +62,15 @@
             // 
             // textBalance
             // 
-            textBalance.Location = new Point(23, 65);
+            textBalance.Location = new Point(25, 65);
             textBalance.Name = "textBalance";
+            textBalance.ReadOnly = true;
             textBalance.Size = new Size(209, 23);
             textBalance.TabIndex = 1;
             // 
             // textBenef
             // 
-            textBenef.Location = new Point(23, 120);
+            textBenef.Location = new Point(25, 120);
             textBenef.Name = "textBenef";
             textBenef.Size = new Size(209, 23);
             textBenef.TabIndex = 3;
@@ -77,7 +78,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(21, 99);
+            label2.Location = new Point(23, 99);
             label2.Name = "label2";
             label2.Size = new Size(65, 15);
             label2.TabIndex = 2;
@@ -85,7 +86,7 @@
             // 
             // textAmount
             // 
-            textAmount.Location = new Point(23, 174);
+            textAmount.Location = new Point(25, 174);
             textAmount.Name = "textAmount";
             textAmount.Size = new Size(209, 23);
             textAmount.TabIndex = 5;
@@ -93,7 +94,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(21, 153);
+            label3.Location = new Point(23, 153);
             label3.Name = "label3";
             label3.Size = new Size(51, 15);
             label3.TabIndex = 4;
@@ -101,15 +102,16 @@
             // 
             // textTransRef
             // 
-            textTransRef.Location = new Point(23, 229);
+            textTransRef.Location = new Point(25, 229);
             textTransRef.Name = "textTransRef";
+            textTransRef.ReadOnly = true;
             textTransRef.Size = new Size(209, 23);
             textTransRef.TabIndex = 7;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(21, 208);
+            label4.Location = new Point(23, 208);
             label4.Name = "label4";
             label4.Size = new Size(68, 15);
             label4.TabIndex = 6;
@@ -117,7 +119,7 @@
             // 
             // textRemarks
             // 
-            textRemarks.Location = new Point(23, 285);
+            textRemarks.Location = new Point(25, 285);
             textRemarks.Multiline = true;
             textRemarks.Name = "textRemarks";
             textRemarks.Size = new Size(209, 43);
@@ -126,7 +128,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(21, 263);
+            label5.Location = new Point(23, 263);
             label5.Name = "label5";
             label5.Size = new Size(52, 15);
             label5.TabIndex = 8;
@@ -134,7 +136,7 @@
             // 
             // buttonSubmit
             // 
-            buttonSubmit.Location = new Point(21, 343);
+            buttonSubmit.Location = new Point(23, 343);
             buttonSubmit.Name = "buttonSubmit";
             buttonSubmit.Size = new Size(97, 23);
             buttonSubmit.TabIndex = 10;
@@ -144,12 +146,13 @@
             // 
             // buttonClear
             // 
-            buttonClear.Location = new Point(135, 343);
+            buttonClear.Location = new Point(137, 343);
             buttonClear.Name = "buttonClear";
             buttonClear.Size = new Size(97, 23);
             buttonClear.TabIndex = 11;
             buttonClear.Text = "Clear";
             buttonClear.UseVisualStyleBackColor = true;
+            buttonClear.Click += buttonClear_Click;
             // 
             // dgvIncoming
             // 
@@ -159,7 +162,7 @@
             dgvIncoming.Location = new Point(266, 32);
             dgvIncoming.Name = "dgvIncoming";
             dgvIncoming.ReadOnly = true;
-            dgvIncoming.Size = new Size(240, 132);
+            dgvIncoming.Size = new Size(686, 153);
             dgvIncoming.TabIndex = 12;
             // 
             // label6
@@ -179,7 +182,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(266, 178);
+            label7.Location = new Point(266, 197);
             label7.Name = "label7";
             label7.Size = new Size(58, 15);
             label7.TabIndex = 15;
@@ -190,10 +193,10 @@
             dgvOutgoing.AllowUserToAddRows = false;
             dgvOutgoing.AllowUserToDeleteRows = false;
             dgvOutgoing.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOutgoing.Location = new Point(266, 196);
+            dgvOutgoing.Location = new Point(266, 215);
             dgvOutgoing.Name = "dgvOutgoing";
             dgvOutgoing.ReadOnly = true;
-            dgvOutgoing.Size = new Size(240, 132);
+            dgvOutgoing.Size = new Size(686, 151);
             dgvOutgoing.TabIndex = 14;
             // 
             // labelMyBenef
@@ -228,7 +231,7 @@
             Controls.Add(textBalance);
             Controls.Add(label1);
             Name = "AcrossTransferPage";
-            Size = new Size(543, 383);
+            Size = new Size(955, 383);
             Load += AcrossTransferPage_Load;
             ((System.ComponentModel.ISupportInitialize)dgvIncoming).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvOutgoing).EndInit();

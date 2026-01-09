@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             pictureBox1 = new PictureBox();
             buttonRegistration = new Button();
             linkForgotPassword = new LinkLabel();
@@ -43,20 +44,22 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(1, 1);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Margin = new Padding(4, 5, 4, 5);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(344, 479);
+            pictureBox1.Size = new Size(430, 599);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 17;
             pictureBox1.TabStop = false;
             // 
             // buttonRegistration
             // 
             buttonRegistration.BackColor = Color.Cyan;
-            buttonRegistration.Location = new Point(377, 419);
-            buttonRegistration.Margin = new Padding(3, 4, 3, 4);
+            buttonRegistration.Location = new Point(471, 524);
+            buttonRegistration.Margin = new Padding(4, 5, 4, 5);
             buttonRegistration.Name = "buttonRegistration";
-            buttonRegistration.Size = new Size(103, 31);
+            buttonRegistration.Size = new Size(129, 39);
             buttonRegistration.TabIndex = 16;
             buttonRegistration.Text = "Registration";
             buttonRegistration.UseVisualStyleBackColor = false;
@@ -65,9 +68,10 @@
             // linkForgotPassword
             // 
             linkForgotPassword.AutoSize = true;
-            linkForgotPassword.Location = new Point(569, 309);
+            linkForgotPassword.Location = new Point(711, 386);
+            linkForgotPassword.Margin = new Padding(4, 0, 4, 0);
             linkForgotPassword.Name = "linkForgotPassword";
-            linkForgotPassword.Size = new Size(118, 20);
+            linkForgotPassword.Size = new Size(146, 25);
             linkForgotPassword.TabIndex = 15;
             linkForgotPassword.TabStop = true;
             linkForgotPassword.Text = "Forgot Password";
@@ -77,10 +81,10 @@
             // buttonSubmit
             // 
             buttonSubmit.BackColor = Color.Lime;
-            buttonSubmit.Location = new Point(377, 304);
-            buttonSubmit.Margin = new Padding(3, 4, 3, 4);
+            buttonSubmit.Location = new Point(471, 380);
+            buttonSubmit.Margin = new Padding(4, 5, 4, 5);
             buttonSubmit.Name = "buttonSubmit";
-            buttonSubmit.Size = new Size(86, 31);
+            buttonSubmit.Size = new Size(108, 39);
             buttonSubmit.TabIndex = 14;
             buttonSubmit.Text = "Submit";
             buttonSubmit.UseVisualStyleBackColor = false;
@@ -90,44 +94,48 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            label3.Location = new Point(477, 87);
+            label3.Location = new Point(525, 119);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(99, 37);
+            label3.Size = new Size(282, 45);
             label3.TabIndex = 13;
-            label3.Text = "LOGIN";
+            label3.Text = "LOGIN FUFUFAFA";
+            label3.Click += label3_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(381, 227);
+            label2.Location = new Point(476, 284);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(70, 20);
+            label2.Size = new Size(87, 25);
             label2.TabIndex = 12;
             label2.Text = "Password";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(381, 153);
+            label1.Location = new Point(476, 191);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(75, 20);
+            label1.Size = new Size(91, 25);
             label1.TabIndex = 11;
             label1.Text = "Username";
             // 
             // textPassword
             // 
-            textPassword.Location = new Point(377, 251);
-            textPassword.Margin = new Padding(3, 4, 3, 4);
+            textPassword.Location = new Point(471, 314);
+            textPassword.Margin = new Padding(4, 5, 4, 5);
             textPassword.Name = "textPassword";
-            textPassword.Size = new Size(302, 27);
+            textPassword.Size = new Size(376, 31);
             textPassword.TabIndex = 10;
             // 
             // textUsername
             // 
-            textUsername.Location = new Point(377, 177);
-            textUsername.Margin = new Padding(3, 4, 3, 4);
+            textUsername.Location = new Point(471, 221);
+            textUsername.Margin = new Padding(4, 5, 4, 5);
             textUsername.Name = "textUsername";
-            textUsername.Size = new Size(302, 27);
+            textUsername.Size = new Size(376, 31);
             textUsername.TabIndex = 9;
             // 
             // labelSuccess
@@ -135,18 +143,19 @@
             labelSuccess.AutoSize = true;
             labelSuccess.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelSuccess.ForeColor = Color.Green;
-            labelSuccess.Location = new Point(377, 29);
+            labelSuccess.Location = new Point(471, 36);
+            labelSuccess.Margin = new Padding(4, 0, 4, 0);
             labelSuccess.Name = "labelSuccess";
-            labelSuccess.Size = new Size(27, 28);
+            labelSuccess.Size = new Size(35, 32);
             labelSuccess.TabIndex = 18;
             labelSuccess.Text = "...";
             labelSuccess.Visible = false;
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(722, 481);
+            ClientSize = new Size(902, 601);
             Controls.Add(labelSuccess);
             Controls.Add(pictureBox1);
             Controls.Add(buttonRegistration);
@@ -157,7 +166,7 @@
             Controls.Add(label1);
             Controls.Add(textPassword);
             Controls.Add(textUsername);
-            Margin = new Padding(3, 4, 3, 4);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "LoginForm";
             Text = "LoginForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

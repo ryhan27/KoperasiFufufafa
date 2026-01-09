@@ -279,6 +279,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Silver;
             Controls.Add(pictureBox6);
             Controls.Add(labelCardExchange);
             Controls.Add(label11);

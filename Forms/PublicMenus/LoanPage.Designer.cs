@@ -533,6 +533,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Silver;
             Controls.Add(buttonReload);
             Controls.Add(label12);
             Controls.Add(textMinAmount);

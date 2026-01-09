@@ -235,6 +235,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Silver;
             Controls.Add(buttonSubmit);
             Controls.Add(textAddress);
             Controls.Add(textPhoneAlt);

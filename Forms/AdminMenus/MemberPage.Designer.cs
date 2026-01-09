@@ -242,13 +242,14 @@
             // 
             // buttonUpdate
             // 
+            buttonUpdate.BackColor = Color.Lime;
             buttonUpdate.Location = new Point(21, 477);
             buttonUpdate.Margin = new Padding(4, 5, 4, 5);
             buttonUpdate.Name = "buttonUpdate";
             buttonUpdate.Size = new Size(107, 38);
             buttonUpdate.TabIndex = 31;
             buttonUpdate.Text = "Update";
-            buttonUpdate.UseVisualStyleBackColor = true;
+            buttonUpdate.UseVisualStyleBackColor = false;
             buttonUpdate.Click += buttonUpdate_Click;
             // 
             // dataGridViewMember
@@ -332,6 +333,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Silver;
             Controls.Add(labelId);
             Controls.Add(dataGridViewMember);
             Controls.Add(buttonUpdate);

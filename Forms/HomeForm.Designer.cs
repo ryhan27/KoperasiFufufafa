@@ -145,6 +145,7 @@
             // 
             // panelDisplay
             // 
+            panelDisplay.BackColor = Color.Silver;
             panelDisplay.Location = new Point(0, 45);
             panelDisplay.Margin = new Padding(4, 5, 4, 5);
             panelDisplay.Name = "panelDisplay";

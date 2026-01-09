@@ -201,6 +201,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Silver;
             ClientSize = new Size(773, 677);
             ControlBox = false;
             Controls.Add(buttonReceipt);

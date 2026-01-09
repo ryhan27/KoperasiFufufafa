@@ -234,6 +234,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Silver;
             Controls.Add(labelMyBenef);
             Controls.Add(label7);
             Controls.Add(dgvOutgoing);

@@ -48,10 +48,11 @@
             pictureBox1.Location = new Point(1, 1);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(344, 479);
+            pictureBox1.Size = new Size(370, 479);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 17;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // buttonRegistration
             // 
@@ -165,6 +166,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "LoginForm";
             Text = "LoginForm";
+            Load += LoginForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
